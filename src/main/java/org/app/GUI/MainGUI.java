@@ -66,7 +66,7 @@ public class MainGUI extends JFrame{
         newTabAction(new HomePage(this)).actionPerformed(null);
         newTabAction(new MemberMenu(this)).actionPerformed(null);
         newTabAction(new MemberRegistration()).actionPerformed(null);
-        newTabAction(new Setting()).actionPerformed(null);
+        newTabAction(new SettingGUI()).actionPerformed(null);
         newTabAction(new MemberHistorySelect(this)).actionPerformed(null);
     }
 
@@ -81,7 +81,7 @@ public class MainGUI extends JFrame{
     private ActionListener newTabSetting() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                newTabAction(new Setting()).actionPerformed(null);
+                newTabAction(new SettingGUI()).actionPerformed(null);
             }
         };
     }

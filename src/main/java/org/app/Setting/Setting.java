@@ -41,7 +41,7 @@ public class Setting extends DataHolder {
         pluginPaths.add(path);
     }
 
-    public void removePluginPath(String path) {
-        pluginPaths.remove(path);
+    public void removePluginPath(int idx) {
+        pluginPaths.remove(idx);
     }
 }
