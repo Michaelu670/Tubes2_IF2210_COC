@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 
+import org.app.GUI.MainGUI;
+
 public class PluginLoader {
     // Get all class name from .jar file
     public static ArrayList<String> getAllClassNames(String filePath) {
@@ -34,7 +36,7 @@ public class PluginLoader {
         return classNames;
     }
 
-    public static void load(String filePath) {
+    public static void load(String filePath, MainGUI mainGUI) {
         try {
             ArrayList<String> classNames = getAllClassNames(filePath);
 
