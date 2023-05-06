@@ -10,11 +10,12 @@ public class DataSaver extends TimerTask {
     @Override
     public void run() {
         dataStore.save();
+        System.out.println("Saved!");
     }
 
     public static void init(DataStore dataStore, int delay) {
         Timer timer = new Timer("DataSaver");
-        timer.schedule(new DataSaver(dataStore), delay);
+        timer.schedule(new DataSaver(dataStore), 3000, delay);
     }
     public static void init(DataStore dataStore) {
         init(dataStore, 3000);
