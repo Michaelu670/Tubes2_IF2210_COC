@@ -14,14 +14,14 @@ public class TabGUI extends JTabbedPane{
     }
 
     public void createNewTab(JPanel newPanel) {
-        currentTab++;
-
         this.addTab(newPanel.getName(), newPanel);
+
+        currentTab = this.getTabCount();
         this.setSelectedIndex(currentTab-1);
     }
 
     public void removeTab() {
         this.remove(this.getSelectedIndex());
-        currentTab--;
+        currentTab = this.getTabCount();
     }
 }

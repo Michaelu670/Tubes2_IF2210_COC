@@ -9,6 +9,8 @@ import org.app.Inventory.Item.BillItem;
 import org.app.Inventory.Item.Item;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+
 public class ReportTest {
 
     @Test
@@ -22,24 +24,28 @@ public class ReportTest {
         .build();
         
         BillItem billItem = new BillItem(item);
+        billItem.quantity(100);
+        billItem.notes("test notes");
 
         Bill bill = new Bill(1);
+        bill.addItem(billItem);
+        bill.addItem(billItem);
         bill.addItem(billItem);
         
         FixedBill fixedBill = new FixedBill(bill);
         
         List<FixedBill> listOfReport = new ArrayList<>();
         listOfReport.add(fixedBill);
+        listOfReport.add(fixedBill);
+        listOfReport.add(fixedBill);
         
         
         SalesReport salesReport = new SalesReport();
         AbstractReport.listOfReport(listOfReport);
 
-        try{
+        assertDoesNotThrow(() -> {
             salesReport.writeReport();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        });
     }
 
     @Test
@@ -53,24 +59,27 @@ public class ReportTest {
         .build();
         
         BillItem billItem = new BillItem(item);
+        billItem.quantity(100);
+        billItem.notes("test notes");
 
         Bill bill = new Bill(1);
+        bill.addItem(billItem);
+        bill.addItem(billItem);
         bill.addItem(billItem);
         
         FixedBill fixedBill = new FixedBill(bill);
         
         List<FixedBill> listOfReport = new ArrayList<>();
         listOfReport.add(fixedBill);
+        listOfReport.add(fixedBill);
+        listOfReport.add(fixedBill);
         
-        
-        FixedBillReport salesReport = new FixedBillReport();
+        FixedBillReport salesReport = new FixedBillReport(1);
         AbstractReport.listOfReport(listOfReport);
 
-        try{
+        assertDoesNotThrow(() -> {
             salesReport.writeReport();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        });
     }
     
 }

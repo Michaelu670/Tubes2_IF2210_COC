@@ -12,8 +12,8 @@ public class HomePage extends JPanel {
     final private JButton memberButton;
     final private JButton sistemUsahaBarangButton;
     final private JButton laporanButton;
-    final private MainGUI parent;
-    public HomePage(MainGUI parent) {
+    final private MainGUI mainGUI;
+    public HomePage(MainGUI mainGUI) {
         this.setLayout(new GridLayoutManager(2, 2, new Insets(0, 0, 0, 0), -1, -1));
         this.setBackground(new Color(-1));
         final JPanel panel2 = new JPanel();
@@ -56,12 +56,12 @@ public class HomePage extends JPanel {
         panel4.add(laporanButton, new GridConstraints(0, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
 
-        this.parent = parent;
+        this.mainGUI = mainGUI;
         userDefinedConfig();
     }
 
     private void userDefinedConfig() {
-        memberButton.addActionListener(parent.newTabAction(new MemberMenu(parent)));
+        memberButton.addActionListener(mainGUI.newTabAction(new MemberMenu(mainGUI)));
         this.setName("Home Page");
 
     }
