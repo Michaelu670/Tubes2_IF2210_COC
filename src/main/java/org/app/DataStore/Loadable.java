@@ -1,4 +1,4 @@
-package org.app.Inventory;
+package org.app.DataStore;
 
 import java.io.Serializable;
 

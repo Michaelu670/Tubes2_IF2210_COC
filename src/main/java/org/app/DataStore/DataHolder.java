@@ -1,9 +1,9 @@
-package org.app.Inventory;
+package org.app.DataStore;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
-public class DataHolder implements Loadable{
+public class DataHolder implements Loadable {
     @Override
     public void setData(Loadable data) throws Exception {
         assert(data.getClass() == this.getClass());

@@ -1,17 +1,15 @@
-import java.util.ArrayList;
-import java.util.List;
+package org.app.Customer;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 import org.app.Inventory.Holder.FixedBill;
 
-class Customer {
+import java.util.List;
+
+@AllArgsConstructor
+@Accessors
+public class Customer {
     private int id;
     private List<FixedBill> bills;
-    
-    public Customer(int id, List<FixedBill> bills) {
-        this.id = id;
-        this.bills = new ArrayList<>();
-        for(int i = 0; i < bills.size(); i++) {
-            this.bills.add(bills.get(i));
-        }
-    }
 }

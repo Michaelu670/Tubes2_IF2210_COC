@@ -4,14 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd767a0f-f884-4fe7-bca9-45f990062165" name="Changes" comment="update example">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataStore.java" afterDir="false" />
+    <list default="true" id="e39da55b-5cd5-45b9-8d8f-6a0619b474b9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/CopySetter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Customer/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Customer/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Customer/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Customer/RegisteredCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Customer/RegisteredCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Customer/VIP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Customer/VIP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/JSONDataAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/JSONDataAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/OBJDataAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/OBJDataAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/XMLDataAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/XMLDataAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Inventory/Cashier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Inventory/Cashier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Inventory/DataHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Inventory/Holder/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Inventory/Holder/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Inventory/Loadable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/Loadable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Setting/Setting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Setting/Setting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +71,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.app.DataStore" />
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="JUnit.DataStoreTest.setting_save_and_load_test">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -109,7 +120,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JSONDataAdapterTest.json_adapter_is_consistent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataStoreTest.data_store_as_data_initializer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Tubes2_IF2210_COC" />
       <extension name="coverage">
         <pattern>
@@ -118,8 +129,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.app.DataStore" />
-      <option name="MAIN_CLASS_NAME" value="org.app.DataStore.JSONDataAdapterTest" />
-      <option name="METHOD_NAME" value="json_adapter_is_consistent" />
+      <option name="MAIN_CLASS_NAME" value="org.app.DataStore.DataStoreTest" />
+      <option name="METHOD_NAME" value="data_store_as_data_initializer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataStoreTest.setting_save_and_load_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Tubes2_IF2210_COC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.app.DataStore.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.app.DataStore" />
+      <option name="MAIN_CLASS_NAME" value="org.app.DataStore.DataStoreTest" />
+      <option name="METHOD_NAME" value="setting_save_and_load_test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,36 +184,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XMLDataFormatterTest.xml_is_consistent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Tubes2_IF2210_COC" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.app.DataStore.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.app.DataStore" />
-      <option name="MAIN_CLASS_NAME" value="org.app.DataStore.XMLDataFormatterTest" />
-      <option name="METHOD_NAME" value="xml_is_consistent" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.App" />
-      <item itemvalue="JUnit.JSONDataAdapterTest.json_adapter_is_consistent" />
+      <item itemvalue="JUnit.DataStoreTest.data_store_as_data_initializer" />
+      <item itemvalue="JUnit.DataStoreTest.setting_save_and_load_test" />
       <item itemvalue="JUnit.OBJDataAdapterTest.obj_adapter_is_consistent" />
       <item itemvalue="JUnit.XMLDataAdapterTest.xml_adapter_is_consistent" />
-      <item itemvalue="JUnit.XMLDataFormatterTest.xml_is_consistent" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataStoreTest.setting_save_and_load_test" />
+        <item itemvalue="JUnit.DataStoreTest.data_store_as_data_initializer" />
         <item itemvalue="Application.App" />
         <item itemvalue="JUnit.OBJDataAdapterTest.obj_adapter_is_consistent" />
         <item itemvalue="JUnit.XMLDataAdapterTest.xml_adapter_is_consistent" />
-        <item itemvalue="JUnit.JSONDataAdapterTest.json_adapter_is_consistent" />
-        <item itemvalue="JUnit.XMLDataFormatterTest.xml_is_consistent" />
       </list>
     </recent_temporary>
   </component>

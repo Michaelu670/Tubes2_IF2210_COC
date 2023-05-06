@@ -2,7 +2,6 @@ package org.app.DataStore;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.app.Inventory.Loadable;
 
 import java.io.*;
 

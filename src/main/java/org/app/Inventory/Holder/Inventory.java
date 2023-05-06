@@ -1,7 +1,11 @@
 package org.app.Inventory.Holder;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.*;
 import lombok.experimental.Accessors;
+import org.app.DataStore.DataHolder;
 import org.app.Inventory.Item.*;
 import org.app.Inventory.*;
 
@@ -10,7 +14,10 @@ import java.util.List;
 
 
 @NoArgsConstructor
-public class Inventory implements ItemHolder {
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@ToString
+public class Inventory extends DataHolder implements ItemHolder {
 
     @Getter @Accessors(fluent = true)
     private List<Item> itemList = new ArrayList<>();

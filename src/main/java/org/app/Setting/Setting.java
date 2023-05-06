@@ -2,13 +2,21 @@ package org.app.Setting;
 
 import java.util.ArrayList;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
+import org.app.DataStore.DataHolder;
 
 @Getter
 @Setter
-public class Setting {
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@ToString
+public class Setting extends DataHolder {
     // Atributes
     private static Setting instance;
     private String storagePath;
