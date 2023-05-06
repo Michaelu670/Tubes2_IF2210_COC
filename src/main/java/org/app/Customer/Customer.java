@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 import org.app.Inventory.Holder.FixedBill;
 
 @Getter
-class Customer {
+public class Customer {
     @Getter
     private int id;
     private List<FixedBill> bills;
