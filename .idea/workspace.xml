@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd767a0f-f884-4fe7-bca9-45f990062165" name="Changes" comment="update example">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataStore.java" afterDir="false" />
+    <list default="true" id="dd767a0f-f884-4fe7-bca9-45f990062165" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/CopySetter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/JSONDataAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/JSONDataAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/OBJDataAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/OBJDataAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/XMLDataAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/XMLDataAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Customer/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Customer/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Customer/RegisteredCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Customer/RegisteredCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Customer/VIP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Customer/VIP.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,13 +30,6 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="ProjectId" id="2OKYnmqisH6olIYp8eo77Nkxbz5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">

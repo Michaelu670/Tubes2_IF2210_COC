@@ -1,3 +1,5 @@
+package org.app.Customer;
+
 import java.util.List;
 
 class VIP extends Member {

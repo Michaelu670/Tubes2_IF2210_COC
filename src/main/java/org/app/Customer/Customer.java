@@ -1,3 +1,5 @@
+package org.app.Customer;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,5 +15,17 @@ class Customer {
         for(int i = 0; i < bills.size(); i++) {
             this.bills.add(bills.get(i));
         }
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public FixedBill getFixedBillAt(int idx) {
+        return this.bills.get(idx);
+    }
+
+    public void addFixedBill(FixedBill fixedBill) {
+        this.bills.add(fixedBill);
     }
 }
