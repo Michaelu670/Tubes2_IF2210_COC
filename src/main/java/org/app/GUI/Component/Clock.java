@@ -33,8 +33,6 @@ public class Clock extends JPanel implements Runnable{
                 int minutes = cal.get(Calendar.MINUTE);
                 int seconds = cal.get(Calendar.SECOND);
 
-                DateFormat dayNameFormatter = new SimpleDateFormat("EEEE");
-
                 String dayNameString = new DateFormatSymbols().getWeekdays()[dayName];
                 String monthString = new DateFormatSymbols().getMonths()[month];
                 String dayString = String.format("%s, %d %s %d", dayNameString, day, monthString, year);

@@ -41,7 +41,7 @@ public class MemberMenu extends JPanel {
     private ActionListener newTabMemberRegistration(MainGUI mainGUI) {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                mainGUI.newTabAction(new MemberRegistration()).actionPerformed(null);
+                mainGUI.newTabAction(new MemberRegistration(mainGUI)).actionPerformed(null);
             }
         };
     }

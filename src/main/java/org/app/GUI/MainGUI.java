@@ -1,5 +1,6 @@
 package org.app.GUI;
 
+import org.app.DataStore.DataStore;
 import org.app.GUI.Component.*;
 
 import javax.swing.*;
@@ -16,6 +17,7 @@ public class MainGUI extends JFrame{
     private JButton closeTabWithMenu; // TODO : JUST FOR EASIER TESTING PURPOSE, MAYBE DELETE LATER
     private JMenuBar menuBar;
     private TabGUI tabGUI;
+    public DataStore dataStore;
 
     private void setFrameConfig() {
         this.setVisible(true);
@@ -65,7 +67,7 @@ public class MainGUI extends JFrame{
 
         newTabAction(new HomePage(this)).actionPerformed(null);
         newTabAction(new MemberMenu(this)).actionPerformed(null);
-        newTabAction(new MemberRegistration()).actionPerformed(null);
+        newTabAction(new MemberRegistration(this)).actionPerformed(null);
         newTabAction(new SettingGUI()).actionPerformed(null);
         newTabAction(new MemberHistorySelect(this)).actionPerformed(null);
     }
@@ -102,12 +104,9 @@ public class MainGUI extends JFrame{
         };
     }
 
-    public MainGUI() {
+    public MainGUI(DataStore dataStore) {
+        this.dataStore = dataStore;
         setFrameConfig();
         initializeGUIElement();
-    }
-
-    public static void main(String[] args) {
-        new MainGUI();
     }
 }

@@ -2,23 +2,19 @@ package org.app.GUI.Component;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
-import org.app.DataStore.DataHolder;
-import org.app.DataStore.DataStore;
 import org.app.Setting.Setting;
 
-import javax.print.attribute.SetOfIntegerSyntax;
 import javax.swing.*;
 import javax.swing.filechooser.*;
-import javax.xml.crypto.Data;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 
 public class SettingGUI extends JPanel {
-    private JComboBox comboBox1;
+    private JComboBox<String> comboBox1;
     private JButton selectPathButton;
-    private DefaultListModel defaultListModel1;
-    private JList list1;
+    private DefaultListModel<String> defaultListModel1;
+    private JList<String> list1;
     private JScrollPane scrollBar1;
     private JButton addPluginButton;
     private JButton deletePluginButton;
@@ -28,8 +24,8 @@ public class SettingGUI extends JPanel {
         final JLabel label1 = new JLabel();
         label1.setText("Data Format");
         this.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        comboBox1 = new JComboBox();
-        final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
+        comboBox1 = new JComboBox<>();
+        final DefaultComboBoxModel<String> defaultComboBoxModel1 = new DefaultComboBoxModel<>();
         defaultComboBoxModel1.addElement("JSON");
         defaultComboBoxModel1.addElement("XML");
         defaultComboBoxModel1.addElement("OBJ");
@@ -44,8 +40,8 @@ public class SettingGUI extends JPanel {
         selectPathButton = new JButton();
         selectPathButton.setText("Select Path");
         this.add(selectPathButton, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        defaultListModel1 = new DefaultListModel();
-        list1 = new JList(defaultListModel1);
+        defaultListModel1 = new DefaultListModel<>();
+        list1 = new JList<>(defaultListModel1);
         this.add(list1, new GridConstraints(3, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         scrollBar1 = new JScrollPane(list1);
         this.add(scrollBar1, new GridConstraints(3, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
