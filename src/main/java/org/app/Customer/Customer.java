@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.app.Inventory.Holder.FixedBill;
 
+@Getter
 class Customer {
     private int id;
     private List<FixedBill> bills;
