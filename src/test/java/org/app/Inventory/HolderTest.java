@@ -6,6 +6,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class HolderTest {
     
     @Test
@@ -175,6 +179,66 @@ public class HolderTest {
         editCashier.addItem(billItem);
 
         assertEquals(cashier.getBill(1).itemList().size(), 2);
+    }
 
+
+    @Test
+    void searchTest(){
+        // Inventory Test
+        Item item = Item.builder()
+                .itemName("1")
+                .sellingPrice(1000)
+                .category("first")
+                .imagePath("")
+                .build();
+
+        Item item2 = Item.builder()
+                .itemName("2")
+                .sellingPrice(900)
+                .category("first")
+                .imagePath("")
+                .build();
+
+        Item item3 = Item.builder()
+                .itemName("3")
+                .sellingPrice(800)
+                .category("first")
+                .imagePath("")
+                .build();
+
+        Item item4 = Item.builder()
+                .itemName("4")
+                .sellingPrice(800)
+                .category("second")
+                .imagePath("")
+                .build();
+
+        Inventory inventory = new Inventory();
+        inventory.addItem(item);
+        inventory.addItem(item2);
+        inventory.addItem(item3);
+        inventory.addItem(item4);
+
+        List<Item> result = inventory.searchItemName("1");
+        assertEquals(result.size(), 1);
+        assertEquals(result.get(0).itemName(), "1");
+        assertEquals(result.get(0), item);
+
+        result = inventory.searchItemCategory("first");
+        assertEquals(result.size(), 3);
+        for (Item i : result){
+            assertEquals(i.category(), "first");
+        }
+
+        result = inventory.sortItemPrice(true);
+        for (int i = 0; i < result.size() - 1; i++){
+            assertTrue(result.get(i).sellingPrice() <= result.get(i + 1).sellingPrice());
+            System.out.println(result.get(i).itemName() + " " + result.get(i).sellingPrice());
+        }
+        result = inventory.sortItemPrice(false);
+        for (int i = 0; i < result.size() - 1; i++){
+            assertTrue(result.get(i).sellingPrice() >= result.get(i + 1).sellingPrice());
+            System.out.println(result.get(i).itemName() + " " + result.get(i).sellingPrice());
+        }
     }
 }
