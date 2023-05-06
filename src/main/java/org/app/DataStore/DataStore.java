@@ -1,7 +1,6 @@
 package org.app.DataStore;
 
 import com.sun.istack.NotNull;
-import com.sun.istack.Nullable;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.app.Customer.Customers;
@@ -15,32 +14,31 @@ import java.nio.file.Paths;
 
 @Accessors(fluent = true)
 @ToString
-@Getter
 public class DataStore {
     @NotNull private XMLDataAdapter settings;
     @NotNull private static final String settingFileLocation = "setting.xml";
 
-    @NotNull private DataAdapter inventory;
-    @NotNull private DataAdapter cashier;
-    @NotNull private DataAdapter customers;
+    @NotNull private DataAdapter inventorySaver;
+    @NotNull private DataAdapter cashierSaver;
+    @NotNull private DataAdapter customersSaver;
     @NotNull private String dataformat;
 
     public DataStore() {
         settings = new XMLDataAdapter(Setting.getInstance());
         loadSettings();
         dataformat = "json";
-        inventory = new JSONDataAdapter(new Inventory());
-        cashier = new JSONDataAdapter(new Cashier());
-        customers = new JSONDataAdapter(new Customers());
+        inventorySaver = new JSONDataAdapter(new Inventory());
+        cashierSaver = new JSONDataAdapter(new Cashier());
+        customersSaver = new JSONDataAdapter(new Customers());
     }
 
     public void save() {
         try {
             Files.createDirectories(Paths.get(Setting.getInstance().getStoragePath()));
             settings.saveData(settingFileLocation);
-            inventory.saveData(fileLocation("inventory"));
-            cashier.saveData(fileLocation("cashier"));
-            customers.saveData(fileLocation("customers"));
+            inventorySaver.saveData(fileLocation("inventory"));
+            cashierSaver.saveData(fileLocation("cashier"));
+            customersSaver.saveData(fileLocation("customers"));
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -62,9 +60,9 @@ public class DataStore {
     public void load() {
         try {
             // assumption: one file doesn't exist means all file don't
-            inventory.loadData(fileLocation("inventory"));
-            cashier.loadData(fileLocation("cashier"));
-            customers.loadData(fileLocation("customers"));
+            inventorySaver.loadData(fileLocation("inventory"));
+            cashierSaver.loadData(fileLocation("cashier"));
+            customersSaver.loadData(fileLocation("customers"));
         }
         catch (FileNotFoundException e) {
             // use default file
@@ -74,25 +72,36 @@ public class DataStore {
         }
     }
 
+    public Inventory inventory() {
+        return (Inventory) inventorySaver.getObj();
+    }
+    public Cashier cashier() {
+        return (Cashier) cashierSaver.getObj();
+    }
+    public Customers customers() {
+        return (Customers) customersSaver.getObj();
+    }
+
+
     private void changeDataFormat() throws Exception {
         if (dataformat.toLowerCase()
                 .equals(Setting.getInstance().getDataFormat().toLowerCase()))
             return;
         dataformat = Setting.getInstance().getDataFormat().toLowerCase();
         if (dataformat.equals("json")) {
-            inventory = new JSONDataAdapter(inventory.getObj());
-            cashier = new JSONDataAdapter(cashier.getObj());
-            customers = new JSONDataAdapter(customers.getObj());
+            inventorySaver = new JSONDataAdapter(inventorySaver.getObj());
+            cashierSaver = new JSONDataAdapter(cashierSaver.getObj());
+            customersSaver = new JSONDataAdapter(customersSaver.getObj());
         }
         else if (dataformat.equals("xml")) {
-            inventory = new XMLDataAdapter(inventory.getObj());
-            cashier = new XMLDataAdapter(cashier.getObj());
-            customers = new XMLDataAdapter(customers.getObj());
+            inventorySaver = new XMLDataAdapter(inventorySaver.getObj());
+            cashierSaver = new XMLDataAdapter(cashierSaver.getObj());
+            customersSaver = new XMLDataAdapter(customersSaver.getObj());
         }
         else if (dataformat.equals("obj")) {
-            inventory = new OBJDataAdapter(inventory.getObj());
-            cashier = new OBJDataAdapter(cashier.getObj());
-            customers = new OBJDataAdapter(customers.getObj());
+            inventorySaver = new OBJDataAdapter(inventorySaver.getObj());
+            cashierSaver = new OBJDataAdapter(cashierSaver.getObj());
+            customersSaver = new OBJDataAdapter(customersSaver.getObj());
         }
         else throw new Exception("Unknown format: " + dataformat);
     }

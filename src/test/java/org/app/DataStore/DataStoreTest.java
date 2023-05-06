@@ -19,7 +19,7 @@ public class DataStoreTest {
     void data_store_as_data_initializer() {
         DataStore store = new DataStore();
         store.load();
-        Assertions.assertNotNull(store.inventory().getObj());
+        Assertions.assertNotNull(store.inventory());
         store.save();
     }
 }
