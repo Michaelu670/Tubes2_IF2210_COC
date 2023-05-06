@@ -3,6 +3,9 @@ package org.app.Customer;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 import org.app.Inventory.Holder.FixedBill;
 
 class Customer {

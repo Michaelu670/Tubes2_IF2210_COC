@@ -3,7 +3,6 @@ package org.app.Customer;
 import org.app.Inventory.Holder.FixedBill;
 
 import java.util.List;
-
 abstract class RegisteredCustomer extends Customer {
     private String name;
     private String telephoneNumber;

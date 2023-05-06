@@ -5,7 +5,7 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.*;
 import lombok.experimental.Accessors;
-import org.app.Inventory.DataHolder;
+import org.app.DataStore.DataHolder;
 
 @Setter @Getter
 @Accessors(fluent = true)

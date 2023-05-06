@@ -5,7 +5,6 @@ import com.google.gson.GsonBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NonNull;
-import org.app.Inventory.Loadable;
 
 import java.io.FileReader;
 import java.io.FileWriter;
