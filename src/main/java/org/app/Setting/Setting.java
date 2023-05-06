@@ -6,7 +6,6 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.app.DataStore.DataHolder;
@@ -26,7 +25,7 @@ public class Setting extends DataHolder {
     // Constructor
     private Setting() {
         this.storagePath = "";
-        this.dataFormat = "json";
+        this.dataFormat = "JSON";
         this.pluginPaths = new ArrayList<String>();
     }
 
@@ -36,5 +35,13 @@ public class Setting extends DataHolder {
             instance = new Setting();
 
         return instance;
+    }
+
+    public void addPluginPath(String path) {
+        pluginPaths.add(path);
+    }
+
+    public void removePluginPath(String path) {
+        pluginPaths.remove(path);
     }
 }
