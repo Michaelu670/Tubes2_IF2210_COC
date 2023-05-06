@@ -1,9 +1,6 @@
 package org.app.GUI;
 
-import org.app.GUI.Component.HomePage;
-import org.app.GUI.Component.MemberMenu;
-import org.app.GUI.Component.MemberRegistration;
-import org.app.GUI.Component.Setting;
+import org.app.GUI.Component.*;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -70,12 +67,13 @@ public class MainGUI extends JFrame{
         newTabAction(new MemberMenu(this)).actionPerformed(null);
         newTabAction(new MemberRegistration()).actionPerformed(null);
         newTabAction(new Setting()).actionPerformed(null);
+        newTabAction(new MemberHistorySelect(this)).actionPerformed(null);
     }
 
-    private ActionListener newTabHome(MainGUI frame) {
+    private ActionListener newTabHome(MainGUI mainGUI) {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                newTabAction(new HomePage(frame)).actionPerformed(null);
+                newTabAction(new HomePage(mainGUI)).actionPerformed(null);
             }
         };
     }

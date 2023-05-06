@@ -13,14 +13,12 @@ import java.util.List;
 public class Setting extends JPanel {
     private JComboBox comboBox1;
     private JButton selectPathButton;
+    private DefaultListModel defaultListModel1;
     private JList list1;
     private JScrollPane scrollBar1;
     private JButton addPluginButton;
     private JButton deletePluginButton;
     private String storagePath;
-
-    private List<String> plugins = new ArrayList<String>();
-
     public Setting() {
         this.setLayout(new GridLayoutManager(5, 3, new Insets(0, 0, 0, 0), -1, -1));
         final JLabel label1 = new JLabel();
@@ -42,7 +40,8 @@ public class Setting extends JPanel {
         selectPathButton = new JButton();
         selectPathButton.setText("Select Path");
         this.add(selectPathButton, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        list1 = new JList();
+        defaultListModel1 = new DefaultListModel();
+        list1 = new JList(defaultListModel1);
         this.add(list1, new GridConstraints(3, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         scrollBar1 = new JScrollPane(list1);
         this.add(scrollBar1, new GridConstraints(3, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -61,22 +60,13 @@ public class Setting extends JPanel {
         scrollBar1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         String[] pluginsData = {"qwe", "w", "", "dqWqw", "dqw", "dqw", "", "ewf", "eq", "gr", "gwtr", "je", "tr", "uytui", "ly"}; // TODO : just for testing, because not have real data
         for(String plugin : pluginsData) {
-            plugins.add(plugin);
+            defaultListModel1.addElement(plugin);
         }
-        updatePluginList();
 
         this.setName("Setting");
         selectPathButton.addActionListener(selectPathAction());
         addPluginButton.addActionListener(addPluginAction());
         deletePluginButton.addActionListener(deletePluginAction());
-    }
-
-    private void updatePluginList() {
-        final DefaultListModel defaultListModel1 = new DefaultListModel();
-        for(String pluginName : plugins) {
-            defaultListModel1.addElement(pluginName);
-        }
-        list1.setModel(defaultListModel1);
     }
 
     private ActionListener selectPathAction() {
@@ -102,8 +92,7 @@ public class Setting extends JPanel {
                 int choice = dialog.showSaveDialog(null);
                 if (choice == JFileChooser.APPROVE_OPTION) {
                     String filepath = dialog.getSelectedFile().getAbsolutePath();
-                    plugins.add(filepath);
-                    updatePluginList();
+                    defaultListModel1.addElement(filepath);
                 }
             }
         };
@@ -111,10 +100,9 @@ public class Setting extends JPanel {
 
     private ActionListener deletePluginAction() {
         return new ActionListener(){
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent event){
                 int idx = list1.getSelectedIndex();
-                plugins.remove(idx);
-                updatePluginList();
+                defaultListModel1.remove(idx);
             }
         };
     }
