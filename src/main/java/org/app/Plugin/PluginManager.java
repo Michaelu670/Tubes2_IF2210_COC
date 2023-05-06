@@ -3,7 +3,14 @@ package org.app.Plugin;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PluginManager {
+import org.app.DataStore.DataHolder;
+
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+public class PluginManager extends DataHolder {
     private static List<String> filePaths = new ArrayList<>();
 
     public static void register(String filePath) {

@@ -4,24 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e39da55b-5cd5-45b9-8d8f-6a0619b474b9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Customer/Customer.java" beforeDir="false" />
+    <list default="true" id="dd767a0f-f884-4fe7-bca9-45f990062165" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Customer/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Customer/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Customer/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Customer/RegisteredCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Customer/RegisteredCustomer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Customer/VIP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Customer/VIP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/JSONDataAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/JSONDataAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/OBJDataAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/OBJDataAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/XMLDataAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/XMLDataAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Inventory/Cashier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Inventory/Cashier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Inventory/DataHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Inventory/Holder/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Inventory/Holder/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Inventory/Loadable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/Loadable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/Setting/Setting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/Setting/Setting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
