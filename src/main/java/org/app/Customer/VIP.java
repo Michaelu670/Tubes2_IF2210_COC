@@ -1,8 +1,8 @@
 package org.app.Customer;
 
-import org.app.Inventory.Holder.FixedBill;
-
 import java.util.List;
+
+import org.app.Inventory.Holder.FixedBill;
 
 class VIP extends Member {
     private final double diskon = 0.1;

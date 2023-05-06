@@ -1,8 +1,8 @@
 package org.app.Customer;
 
-import org.app.Inventory.Holder.FixedBill;
-
 import java.util.List;
+
+import org.app.Inventory.Holder.FixedBill;
 
 class Member extends RegisteredCustomer {
     private final double poin_rate = 0.01;
