@@ -15,19 +15,14 @@ class Customer {
     public Customer(int id, List<FixedBill> bills) {
         this.id = id;
         this.bills = new ArrayList<>();
-        for(int i = 0; i < bills.size(); i++) {
-            this.bills.add(bills.get(i));
-        }
+        this.bills.addAll(bills);
     }
-
     public int getId() {
         return this.id;
     }
-
     public FixedBill getFixedBillAt(int idx) {
         return this.bills.get(idx);
     }
-
     public void addFixedBill(FixedBill fixedBill) {
         this.bills.add(fixedBill);
     }
