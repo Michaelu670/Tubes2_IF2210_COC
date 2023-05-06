@@ -24,7 +24,13 @@ public class Customers extends DataHolder {
         return customerList.stream().filter(x -> x.getClass()
                 .equals(Customer.class)).collect(Collectors.toList());
     }
-    public void turnToMember(Customer customer, String name, String telephoneNumber) {
+    public Customer getCustomerFromID(int id) {
+        return customerList.stream()
+                .filter(customer -> customer.getId() == id)
+                .findAny().get();
+    }
+    public void turnToMember(int id, String name, String telephoneNumber) {
+        Customer customer = getCustomerFromID(id);
         customerList.remove(customer);
         customerList.add(new CustomerBuilder(customer)
                 .name(name)
@@ -33,7 +39,8 @@ public class Customers extends DataHolder {
                 .build());
     }
 
-    public void turnToVIP(Customer customer, String name, String telephoneNumber) {
+    public void turnToVIP(int id, String name, String telephoneNumber) {
+        Customer customer = getCustomerFromID(id);
         customerList.remove(customer);
         customerList.add(new CustomerBuilder(customer)
                 .name(name)
