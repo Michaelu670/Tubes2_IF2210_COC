@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd767a0f-f884-4fe7-bca9-45f990062165" name="Changes" comment="update example">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/Inventory/DataHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Person.java" afterDir="false" />
+    <list default="true" id="dd767a0f-f884-4fe7-bca9-45f990062165" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +36,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2OKYnmqisH6olIYp8eo77Nkxbz5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,7 +59,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OBJDataAdapterTest.obj_adapter_is_consistent">
+  <component name="RunManager" selected="Application.App">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -85,6 +87,19 @@
       <option name="resourceGroup" />
       <option name="stagingFolder" />
       <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.app.App" />
+      <module name="Tubes2_IF2210_COC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,29 +168,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XMLDataFormatterTest.xml_is_valid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Tubes2_IF2210_COC" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.app.DataStore.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.app.DataStore" />
-      <option name="MAIN_CLASS_NAME" value="org.app.DataStore.XMLDataFormatterTest" />
-      <option name="METHOD_NAME" value="xml_is_valid" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="JUnit.JSONDataAdapterTest.json_adapter_is_consistent" />
+      <item itemvalue="JUnit.OBJDataAdapterTest.obj_adapter_is_consistent" />
+      <item itemvalue="JUnit.XMLDataAdapterTest.xml_adapter_is_consistent" />
+      <item itemvalue="JUnit.XMLDataFormatterTest.xml_is_consistent" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.OBJDataAdapterTest.obj_adapter_is_consistent" />
         <item itemvalue="JUnit.XMLDataAdapterTest.xml_adapter_is_consistent" />
         <item itemvalue="JUnit.JSONDataAdapterTest.json_adapter_is_consistent" />
         <item itemvalue="JUnit.XMLDataFormatterTest.xml_is_consistent" />
-        <item itemvalue="JUnit.XMLDataFormatterTest.xml_is_valid" />
       </list>
     </recent_temporary>
   </component>
