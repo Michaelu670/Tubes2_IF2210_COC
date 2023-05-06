@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd767a0f-f884-4fe7-bca9-45f990062165" name="Changes" comment="update example">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/JSONDataFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/OBJDataFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/XMLDataFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/app/DataStore/JSONDataFormatterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/app/DataStore/XMLDataFormatterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/JSONDataAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/OBJDataAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/DataStore/XMLDataAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/Inventory/Loadable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/app/DataStore/JSONDataAdapterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/app/DataStore/OBJDataAdapterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/app/DataStore/XMLDataAdapterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/DataFormatter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/JSONDataFormatter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/OBJDataFormatter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/DataStore/XMLDataFormatter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/app/DataStore/JSONDataFormatterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/app/DataStore/XMLDataFormatterTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +70,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.XMLDataFormatterTest.xml_is_valid">
+  <component name="RunManager" selected="JUnit.OBJDataAdapterTest.obj_adapter_is_consistent">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -94,30 +102,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.JsonParser" />
+    <configuration name="JSONDataAdapterTest.json_adapter_is_consistent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Tubes2_IF2210_COC" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.app.DataStore.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.app.DataStore" />
+      <option name="MAIN_CLASS_NAME" value="org.app.DataStore.JSONDataAdapterTest" />
+      <option name="METHOD_NAME" value="json_adapter_is_consistent" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.methodTwoShouldReturnAnIntegerEqualsTwo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OBJDataAdapterTest.obj_adapter_is_consistent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Tubes2_IF2210_COC" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.app.DataStore.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.MainTest" />
-      <option name="METHOD_NAME" value="methodTwoShouldReturnAnIntegerEqualsTwo" />
+      <option name="PACKAGE_NAME" value="org.app.DataStore" />
+      <option name="MAIN_CLASS_NAME" value="org.app.DataStore.OBJDataAdapterTest" />
+      <option name="METHOD_NAME" value="obj_adapter_is_consistent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XMLDataAdapterTest.xml_adapter_is_consistent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Tubes2_IF2210_COC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.app.DataStore.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.app.DataStore" />
+      <option name="MAIN_CLASS_NAME" value="org.app.DataStore.XMLDataAdapterTest" />
+      <option name="METHOD_NAME" value="xml_adapter_is_consistent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XMLDataFormatterTest.xml_is_consistent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Tubes2_IF2210_COC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.app.DataStore.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.app.DataStore" />
+      <option name="MAIN_CLASS_NAME" value="org.app.DataStore.XMLDataFormatterTest" />
+      <option name="METHOD_NAME" value="xml_is_consistent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -141,9 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OBJDataAdapterTest.obj_adapter_is_consistent" />
+        <item itemvalue="JUnit.XMLDataAdapterTest.xml_adapter_is_consistent" />
+        <item itemvalue="JUnit.JSONDataAdapterTest.json_adapter_is_consistent" />
+        <item itemvalue="JUnit.XMLDataFormatterTest.xml_is_consistent" />
         <item itemvalue="JUnit.XMLDataFormatterTest.xml_is_valid" />
-        <item itemvalue="Application.JsonParser" />
-        <item itemvalue="JUnit.MainTest.methodTwoShouldReturnAnIntegerEqualsTwo" />
       </list>
     </recent_temporary>
   </component>
