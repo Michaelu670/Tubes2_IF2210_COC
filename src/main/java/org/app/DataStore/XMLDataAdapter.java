@@ -14,7 +14,7 @@ public class XMLDataAdapter implements DataAdapter {
     private Loadable obj;
 
     @Override
-    public void getData(String fileLocation) throws Exception{
+    public void saveData(String fileLocation) throws Exception{
         JAXBContext context = JAXBContext.newInstance(obj.getClass());
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -23,7 +23,7 @@ public class XMLDataAdapter implements DataAdapter {
     }
 
     @Override
-    public void setData(String fileLocation) throws Exception {
+    public void loadData(String fileLocation) throws Exception {
         JAXBContext context = JAXBContext.newInstance(obj.getClass());
         Unmarshaller unmarshaller = context.createUnmarshaller();
 

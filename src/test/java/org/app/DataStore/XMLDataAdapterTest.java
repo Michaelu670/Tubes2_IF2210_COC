@@ -10,10 +10,10 @@ public class XMLDataAdapterTest {
         Person budi = new Person().age(20).name("Budi");
         DataAdapter p = new XMLDataAdapter(budi);
         Assertions.assertDoesNotThrow( () -> {
-            p.getData("testFile.xml");
+            p.saveData("testFile.xml");
             budi.name("bukan Budi");
             budi.age(100);
-            p.setData("testFile.xml");
+            p.loadData("testFile.xml");
         });
 
         Assertions.assertTrue(budi.name().equals("Budi"));

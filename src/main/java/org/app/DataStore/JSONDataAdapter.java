@@ -13,7 +13,7 @@ import java.io.FileWriter;
 public class JSONDataAdapter implements DataAdapter {
     @NonNull private Loadable obj;
     @Override
-    public void getData(String fileLocation) throws Exception {
+    public void saveData(String fileLocation) throws Exception {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         FileWriter fw = new FileWriter(fileLocation);
         gson.toJson(obj, fw);
@@ -22,7 +22,7 @@ public class JSONDataAdapter implements DataAdapter {
     }
 
     @Override
-    public void setData(String fileLocation) throws Exception {
+    public void loadData(String fileLocation) throws Exception {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         obj.setData(gson.fromJson(new FileReader(fileLocation), obj.getClass()));
     }

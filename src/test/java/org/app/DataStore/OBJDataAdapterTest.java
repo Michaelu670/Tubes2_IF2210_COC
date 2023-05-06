@@ -10,10 +10,10 @@ public class OBJDataAdapterTest {
         Person budi = new Person().age(20).name("Budi");
         DataAdapter p = new OBJDataAdapter(budi);
         Assertions.assertDoesNotThrow( () -> {
-            p.getData("testFile.obj");
+            p.saveData("testFile.obj");
             budi.name("bukan Budi");
             budi.age(100);
-            p.setData("testFile.obj");
+            p.loadData("testFile.obj");
         });
 
         Assertions.assertTrue(budi.name().equals("Budi"));

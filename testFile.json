@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<person>
-    <age>20</age>
-    <name>Budi</name>
-</person>
+{
+  "age": 20,
+  "name": "Budi"
+}
