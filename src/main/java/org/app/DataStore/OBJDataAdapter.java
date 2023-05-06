@@ -1,11 +1,13 @@
 package org.app.DataStore;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.app.Inventory.Loadable;
 
 import java.io.*;
 
 @AllArgsConstructor
+@Getter
 public class OBJDataAdapter implements DataAdapter{
     private Loadable obj;
 

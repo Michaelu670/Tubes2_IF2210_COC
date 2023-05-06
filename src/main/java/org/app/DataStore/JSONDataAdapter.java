@@ -3,6 +3,7 @@ package org.app.DataStore;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NonNull;
 import org.app.Inventory.Loadable;
 
@@ -10,6 +11,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 
 @AllArgsConstructor
+@Getter
 public class JSONDataAdapter implements DataAdapter {
     @NonNull private Loadable obj;
     @Override

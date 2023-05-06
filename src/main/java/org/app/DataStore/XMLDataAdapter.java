@@ -4,12 +4,14 @@ import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.app.Inventory.Loadable;
 
 import java.io.FileReader;
 import java.io.FileWriter;
 
 @AllArgsConstructor
+@Getter
 public class XMLDataAdapter implements DataAdapter {
     private Loadable obj;
 
