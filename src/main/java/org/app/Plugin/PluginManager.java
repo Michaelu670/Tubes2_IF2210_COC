@@ -9,6 +9,7 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import org.app.GUI.MainGUI;
+import org.app.Setting.Setting;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -27,7 +28,7 @@ public class PluginManager extends DataHolder {
 
     public static void enableAll(MainGUI mainGUI) {
         // Get all file from db, then load all plugin
-        for (String filePath : filePaths) {
+        for (String filePath : Setting.getInstance().getPluginPaths()) {
             PluginLoader.load(filePath, mainGUI);
         }
     }

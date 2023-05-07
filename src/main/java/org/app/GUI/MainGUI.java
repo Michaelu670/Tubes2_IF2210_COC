@@ -3,6 +3,7 @@ package org.app.GUI;
 import org.app.DataStore.DataStore;
 import org.app.GUI.Component.*;
 import org.app.Inventory.Holder.Bill;
+import org.app.Plugin.PluginManager;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -72,7 +73,7 @@ public class MainGUI extends JFrame{
         // TODO : just for testing purpose, delete later
 //        newTabAction(new MemberMenu(this)).actionPerformed(null);
 //        newTabAction(new MemberRegistration(this)).actionPerformed(null);
-//        newTabAction(new SettingGUI(this)).actionPerformed(null);
+        newTabAction(new SettingGUI(this)).actionPerformed(null);
 //        newTabAction(new MemberHistorySelect(this)).actionPerformed(null);
 //        newTabAction(new Report()).actionPerformed(null);
 //        newTabAction(new InventorySystemMenu(this)).actionPerformed(null);
@@ -119,5 +120,6 @@ public class MainGUI extends JFrame{
         this.dataStore = dataStore;
         setFrameConfig();
         initializeGUIElement();
+        PluginManager.enableAll(this);
     }
 }
