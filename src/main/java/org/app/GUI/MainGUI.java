@@ -70,16 +70,17 @@ public class MainGUI extends JFrame{
 
     private void makeFinishedPanel() {
         // TODO : just for testing purpose, delete later
-        newTabAction(new MemberMenu(this)).actionPerformed(null);
-        newTabAction(new MemberRegistration(this)).actionPerformed(null);
-        newTabAction(new SettingGUI(this)).actionPerformed(null);
-        newTabAction(new MemberHistorySelect(this)).actionPerformed(null);
-        newTabAction(new Report()).actionPerformed(null);
-        newTabAction(new InventorySystemMenu(this)).actionPerformed(null);
-        newTabAction(new InventorySystemSell(this)).actionPerformed(null);
+//        newTabAction(new MemberMenu(this)).actionPerformed(null);
+//        newTabAction(new MemberRegistration(this)).actionPerformed(null);
+//        newTabAction(new SettingGUI(this)).actionPerformed(null);
+//        newTabAction(new MemberHistorySelect(this)).actionPerformed(null);
+//        newTabAction(new Report()).actionPerformed(null);
+//        newTabAction(new InventorySystemMenu(this)).actionPerformed(null);
+//        newTabAction(new InventorySystemSell(this)).actionPerformed(null);
         for (Bill bill: dataStore.cashier().billList()) {
             newTabAction(new InventorySystemBuy(this, bill)).actionPerformed(null);
         }
+        newTabAction(new MemberList(this)).actionPerformed(null);
     }
 
     private ActionListener newTabHome(MainGUI mainGUI) {

@@ -86,9 +86,9 @@ public class MemberRegistration extends JPanel{
                 String number = numberField.getText();
                 String type = typeField.getSelectedItem().toString();
                 if(type.equals("Member")){
-                    mainGUI.dataStore.customers().turnToMember(id, name, number);
+                    mainGUI.dataStore.customers().turnToMember(id, name, number, 0, true);
                 }else {
-                    mainGUI.dataStore.customers().turnToVIP(id, name, number);
+                    mainGUI.dataStore.customers().turnToVIP(id, name, number, 0, true);
                 }
                 
                 defaultComboBoxModel1.removeElement(id);

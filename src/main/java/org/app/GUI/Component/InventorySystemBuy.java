@@ -77,7 +77,6 @@ public class InventorySystemBuy extends JPanel {
     private ActionListener checkoutButtonAction() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // TODO
                 String userID = comboBox2.getSelectedItem().toString();
                 Customer currentCustomer;
                 int intUserID;
@@ -132,7 +131,7 @@ public class InventorySystemBuy extends JPanel {
         };
     }
 
-    private void refresh(ArrayList<Item> items) { // TODO
+    private void refresh(ArrayList<Item> items) {
         this.removeAll();
         this.revalidate();
         this.repaint();

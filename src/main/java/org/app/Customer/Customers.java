@@ -38,7 +38,7 @@ public class Customers {
                 .filter(customer -> customer.getId() == id)
                 .findAny().get();
     }
-    public void turnToMember(int id, String name, String telephoneNumber, int point, boolean status) {
+    public void turnToMember(int id, String name, String telephoneNumber, double point, boolean status) {
         Customer customer = getCustomerFromID(id);
         customerList.remove(customer);
         customerList.add(customer.getId(), new CustomerBuilder(customer)
@@ -50,7 +50,7 @@ public class Customers {
                 .build());
     }
 
-    public void turnToVIP(int id, String name, String telephoneNumber, int point, boolean status) {
+    public void turnToVIP(int id, String name, String telephoneNumber, double point, boolean status) {
         Customer customer = getCustomerFromID(id);
         customerList.remove(customer);
         customerList.add(customer.getId(), new CustomerBuilder(customer)

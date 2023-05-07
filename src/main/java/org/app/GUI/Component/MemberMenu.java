@@ -33,12 +33,13 @@ public class MemberMenu extends JPanel {
 
     private void userDefinedConfig() {
         this.setName("Member Menu");
-        registrationButton.addActionListener(mainGUI.newTabAction(new MemberRegistration(mainGUI))); // TODO : harusnya pake actionlistner dibawah tapi error
-        historyButton.addActionListener(mainGUI.newTabAction(new MemberHistorySelect(mainGUI))); // TODO : harusnya pake actionlistner dibawah tapi error
+        registrationButton.addActionListener(newTabMemberRegistration());
+        listButton.addActionListener(newTabMemberList());
+        historyButton.addActionListener(newTabMemberHistory());
     }
 
 
-    private ActionListener newTabMemberRegistration(MainGUI mainGUI) {
+    private ActionListener newTabMemberRegistration() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 mainGUI.newTabAction(new MemberRegistration(mainGUI)).actionPerformed(null);
@@ -46,7 +47,14 @@ public class MemberMenu extends JPanel {
         };
     }
 
-    private ActionListener newTabMemberHistory(MainGUI mainGUI) {
+    private ActionListener newTabMemberList() {
+        return new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                mainGUI.newTabAction(new MemberList(mainGUI)).actionPerformed(null);
+            }
+        };
+    }
+    private ActionListener newTabMemberHistory() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 mainGUI.newTabAction(new MemberHistorySelect(mainGUI)).actionPerformed(null);

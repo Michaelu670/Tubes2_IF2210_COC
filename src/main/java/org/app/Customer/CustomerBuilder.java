@@ -12,7 +12,7 @@ public class CustomerBuilder {
     @NotNull Customer customer;
     @NotNull String name;
     @NotNull String telephoneNumber;
-    private int point;
+    private double point;
     private boolean status;
 
     public CustomerBuilder(Customer customer) {
