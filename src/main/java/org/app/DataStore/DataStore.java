@@ -109,7 +109,9 @@ public class DataStore {
     }
 
     private String fileLocation(String fileName) {
-        return Setting.getInstance().getStoragePath() + "/"
-                + fileName + "." + dataformat.toLowerCase();
+        return Paths.get(
+                Setting.getInstance().getStoragePath()
+                , fileName + "." + dataformat.toLowerCase())
+                .toString();
     }
 }
