@@ -26,4 +26,7 @@ public class Customer {
     public void addFixedBill(FixedBill fixedBill) {
         this.bills.add(fixedBill);
     }
+    public int sizeOfFixedBill() {
+        return this.bills.size();
+    }
 }
