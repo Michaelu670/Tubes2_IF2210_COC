@@ -23,6 +23,7 @@ import org.simpleframework.xml.Root;
 public class FixedBill implements Serializable {
     @Element
     private int user;  // change to Member instance
+    @Element
     private int billId;
     @Element
     private double totalPrice;

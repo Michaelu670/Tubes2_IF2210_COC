@@ -4,19 +4,16 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import org.app.GUI.Component.Features.GUIUtil;
 import org.app.GUI.MainGUI;
-import org.app.Inventory.Holder.Inventory;
 import org.app.Inventory.Item.Item;
-import org.app.Setting.Setting;
+import org.app.money.MoneyDecorator;
+import org.app.money.MoneyHolder;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -137,13 +134,17 @@ public class InventorySystemSell extends JPanel {
         return new ActionListener() {
             public void actionPerformed(ActionEvent event) {
                 try{
+                    MoneyHolder sellPrice = MoneyDecorator.money.cloneMoney();
+                    sellPrice.setMoney(Double.valueOf(((JTextField) itemDescriptions[2]).getText()));
+                    MoneyHolder purchasePrice = MoneyDecorator.money.cloneMoney();
+                    purchasePrice.setMoney(Double.valueOf(((JTextField) itemDescriptions[3]).getText()));
                     if(isAdding) {
                         mainGUI.dataStore.inventory().addItem(
                                 Item.builder()
                                         .itemName(((JTextField) itemDescriptions[0]).getText())
                                         .category(((JTextField) itemDescriptions[1]).getText())
-                                        .sellingPrice(Double.valueOf(((JTextField) itemDescriptions[2]).getText()))
-                                        .purchasePrice(Double.valueOf(((JTextField) itemDescriptions[3]).getText()))
+                                        .sellingPrice(sellPrice)
+                                        .purchasePrice(purchasePrice)
                                         .stock(Integer.valueOf(((JTextField) itemDescriptions[4]).getText()))
                                         .imagePath(inputImagePath)
                                         .build()
@@ -153,9 +154,9 @@ public class InventorySystemSell extends JPanel {
                         Item item = mainGUI.dataStore.inventory().getItem(listSelectedIndex);
                         item.itemName(((JTextField) itemDescriptions[0]).getText())
                             .category(((JTextField) itemDescriptions[1]).getText())
-                            .sellingPrice(Double.valueOf(((JTextField) itemDescriptions[2]).getText()))
+                            .sellingPrice(sellPrice)
                             .imagePath(inputImagePath);
-                        item.purchasePrice(Double.valueOf(((JTextField) itemDescriptions[3]).getText()))
+                        item.purchasePrice(purchasePrice)
                             .stock(Integer.valueOf(((JTextField) itemDescriptions[4]).getText()));
                     }
                     toggleEditing();

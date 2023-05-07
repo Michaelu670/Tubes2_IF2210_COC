@@ -10,6 +10,8 @@ import org.app.Inventory.Item.BillItem;
 import org.app.Inventory.Item.Item;
 import org.app.Report.AbstractReport;
 import org.app.Report.SalesReport;
+import org.app.money.MoneyDecorator;
+import org.app.money.MoneyHolder;
 
 import javax.swing.*;
 import java.awt.*;
@@ -86,9 +88,11 @@ public class Report extends JPanel {
     private ActionListener cetakPenjualanAction() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                MoneyHolder sellPrice = MoneyDecorator.money.cloneMoney();
+                sellPrice.setMoney(10);
                 Item item = Item.builder()
                         .itemName("name")
-                        .sellingPrice(10)
+                        .sellingPrice(sellPrice)
                         .category("cat")
                         .imagePath("null")
                         .build();

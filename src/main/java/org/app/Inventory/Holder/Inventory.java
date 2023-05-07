@@ -70,9 +70,9 @@ public class Inventory extends DataHolder implements ItemHolder {
         List<Item> items = new ArrayList<>();
         items.addAll(itemList);
         if(asc){
-            items.sort((o1, o2) -> (int) (o1.sellingPrice() - o2.sellingPrice()));
+            items.sort((o1, o2) -> (int) (o1.sellingPrice().getMoney() - o2.sellingPrice().getMoney()));
         }else{
-            items.sort((o1, o2) -> (int) (o2.sellingPrice() - o1.sellingPrice()));
+            items.sort((o1, o2) -> (int) (o2.sellingPrice().getMoney() - o1.sellingPrice().getMoney()));
         }
         return items;
     }
@@ -80,7 +80,7 @@ public class Inventory extends DataHolder implements ItemHolder {
     public List<Item> searchItemPrice(double price){
         List<Item> items = new ArrayList<>();
         for(Item item : itemList){
-            if(item.sellingPrice() == price){
+            if(item.sellingPrice().getMoney() == price){
                 items.add(item);
             }
         }
@@ -90,7 +90,7 @@ public class Inventory extends DataHolder implements ItemHolder {
     public List<Item> searchItemPriceRange(double min, double max){
         List<Item> items = new ArrayList<>();
         for(Item item : itemList){
-            if(item.sellingPrice() >= min && item.sellingPrice() <= max){
+            if(item.sellingPrice().getMoney() >= min && item.sellingPrice().getMoney() <= max){
                 items.add(item);
             }
         }

@@ -3,6 +3,7 @@ package org.app.Inventory.Item;
 import lombok.*;
 import lombok.experimental.Accessors;
 import lombok.experimental.SuperBuilder;
+import org.app.money.MoneyHolder;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
@@ -20,7 +21,7 @@ public abstract class ItemDescription implements Serializable {
     @Element
     @NonNull private String itemName;
     @Element
-    private double sellingPrice;        // harga
+    private MoneyHolder sellingPrice;        // harga
     @Element
     @NonNull private String category;
     @Element

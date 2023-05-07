@@ -1,0 +1,49 @@
+{
+  "itemList": [
+    {
+      "stock": 0,
+      "purchasePrice": {
+        "value": 0.0
+      },
+      "itemName": "item inventory",
+      "category": "makanan",
+      "imagePath": "image/item2.png"
+    },
+    {
+      "stock": 0,
+      "purchasePrice": {
+        "value": 0.0
+      },
+      "itemName": "item inventory",
+      "category": "makanan",
+      "imagePath": "image/item2.png"
+    },
+    {
+      "stock": 0,
+      "purchasePrice": {
+        "value": 0.0
+      },
+      "itemName": "item inventory",
+      "category": "makanan",
+      "imagePath": "image/item2.png"
+    },
+    {
+      "stock": 0,
+      "purchasePrice": {
+        "value": 0.0
+      },
+      "itemName": "item inventory",
+      "category": "makanan",
+      "imagePath": "image/item2.png"
+    },
+    {
+      "stock": 0,
+      "purchasePrice": {
+        "value": 0.0
+      },
+      "itemName": "item inventory",
+      "category": "makanan",
+      "imagePath": "image/item2.png"
+    }
+  ]
+}

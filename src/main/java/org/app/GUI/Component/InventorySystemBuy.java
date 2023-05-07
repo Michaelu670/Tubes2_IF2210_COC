@@ -11,6 +11,7 @@ import org.app.Inventory.Holder.Bill;
 import org.app.Inventory.Holder.FixedBill;
 import org.app.Inventory.Item.BillItem;
 import org.app.Inventory.Item.Item;
+import org.app.money.Rupiah;
 
 import javax.swing.*;
 import java.awt.*;
@@ -182,7 +183,7 @@ public class InventorySystemBuy extends JPanel {
                         .itemName("Nama")
                         .category("Nama")
                         .imagePath("Nama")
-                        .sellingPrice(0)
+                        .sellingPrice(new Rupiah(0))
                         .build()
         );
         emptyBill.quantity(0);

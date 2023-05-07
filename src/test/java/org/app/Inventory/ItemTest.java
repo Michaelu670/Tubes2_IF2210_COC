@@ -2,6 +2,8 @@ package org.app.Inventory;
 
 import org.app.Inventory.Item.BillItem;
 import org.app.Inventory.Item.Item;
+import org.app.money.MoneyDecorator;
+import org.app.money.MoneyHolder;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,8 +12,8 @@ public class ItemTest {
 
     int defaultStock = 10;
     String defaultName = "Coffee";
-    int defaultSelling = 150;
-    int defaultPurchase = 100;
+    MoneyHolder defaultSelling = MoneyDecorator.getCurrentMoney(150);
+    MoneyHolder defaultPurchase = MoneyDecorator.getCurrentMoney(100);
     String defaultCategories = "Beverages";
     String defaultImage = "";
 
@@ -29,8 +31,8 @@ public class ItemTest {
 
         assertEquals (get.stock(), 10);
         assertNotEquals  (get.itemName(), "Coffees");
-        assertEquals (get.sellingPrice(), 150.0000000);
-        assertEquals (get.purchasePrice(), 00100.000000000);
+        assertEquals (get.sellingPrice().getMoney(), 150.0000000);
+        assertEquals (get.purchasePrice().getMoney(), 00100.000000000);
         assertEquals  (get.category(), defaultCategories);
         assert  (get.imagePath().isEmpty());
     }
@@ -41,8 +43,8 @@ public class ItemTest {
         Item set = Item.builder()
                     .stock(0)
                     .itemName("")
-                    .sellingPrice(0)
-                    .purchasePrice(0)
+                    .sellingPrice(MoneyDecorator.getCurrentMoney(0))
+                    .purchasePrice(MoneyDecorator.getCurrentMoney(0))
                     .category("")
                     .imagePath("")
                     .build();
@@ -56,8 +58,8 @@ public class ItemTest {
 
         assertNotEquals (set.stock(), (10.0000001));
         assertEquals  (set.itemName(), ("Coffee"));
-        assertEquals (set.sellingPrice() , 150);
-        assertEquals (set.purchasePrice() , 100);
+        assertEquals (set.sellingPrice().getMoney() , 150);
+        assertEquals (set.purchasePrice().getMoney() , 100);
         assertEquals  (set.category(), ("Beverages"));
         assertEquals  (set.imagePath(), "") ;
     }
@@ -68,8 +70,8 @@ public class ItemTest {
         Item nonNull = Item.builder()
                     .stock(0)
                     .itemName("")
-                    .sellingPrice(0)
-                    .purchasePrice(0)
+                    .sellingPrice(MoneyDecorator.getCurrentMoney(0))
+                    .purchasePrice(MoneyDecorator.getCurrentMoney(0))
                     .category("")
                     .imagePath("")
                     .build();

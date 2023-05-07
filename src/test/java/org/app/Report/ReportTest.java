@@ -7,6 +7,7 @@ import org.app.Inventory.Holder.Bill;
 import org.app.Inventory.Holder.FixedBill;
 import org.app.Inventory.Item.BillItem;
 import org.app.Inventory.Item.Item;
+import org.app.money.MoneyDecorator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
@@ -19,7 +20,7 @@ public class ReportTest {
         
         Item item = Item.builder()
         .itemName("name")
-        .sellingPrice(10)
+        .sellingPrice(MoneyDecorator.getCurrentMoney(10))
         .category("cat")
         .imagePath("null")
         .build();
@@ -60,7 +61,7 @@ public class ReportTest {
         
         Item item = Item.builder()
         .itemName("name")
-        .sellingPrice(10)
+        .sellingPrice(MoneyDecorator.getCurrentMoney(10))
         .category("cat")
         .imagePath("null")
         .build();

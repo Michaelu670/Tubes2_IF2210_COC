@@ -1,0 +1,259 @@
+{
+  "billList": [
+    {
+      "user": 0,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 0.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 1,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 100.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 2,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 200.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 3,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 300.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 4,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 400.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 5,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 500.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 6,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 600.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 7,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 700.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 8,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 800.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 9,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 900.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 10,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 1000.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 11,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 1100.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 12,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 1200.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 13,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 1300.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    },
+    {
+      "user": 14,
+      "billId": 0,
+      "itemList": [
+        {
+          "quantity": 1,
+          "orderType": "Dine In",
+          "notes": "",
+          "itemName": "item",
+          "sellingPrice": {
+            "value": 1400.0
+          },
+          "category": "makanan",
+          "imagePath": "image/item.png"
+        }
+      ]
+    }
+  ]
+}

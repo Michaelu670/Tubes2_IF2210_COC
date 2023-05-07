@@ -5,6 +5,9 @@ import lombok.experimental.Accessors;
 import lombok.experimental.SuperBuilder;
 import org.app.Inventory.Item.*;
 import org.app.Inventory.*;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Root;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,13 +17,17 @@ import java.util.List;
 @SuperBuilder
 @EqualsAndHashCode
 @NoArgsConstructor
+@Root
 @Accessors(fluent = true)
 public class Bill implements PurchaseDescription, ItemHolder, Serializable {
 
+    @Element
     private int user;  // change to Member instance
+    @Element
     private int billId;
 
     @Builder.Default
+    @ElementList
     private List<BillItem> itemList = new ArrayList<>();
     
     public Bill(int user, int billSize) {
@@ -55,7 +62,7 @@ public class Bill implements PurchaseDescription, ItemHolder, Serializable {
     @Override
     public double totalPrice() {
         return itemList.stream()
-                .mapToDouble(item -> item.sellingPrice() * item.quantity())                
+                .mapToDouble(item -> item.sellingPrice().getMoney() * item.quantity())
                 .sum();
     }
 

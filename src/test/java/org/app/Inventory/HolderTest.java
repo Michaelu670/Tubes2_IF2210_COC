@@ -2,6 +2,7 @@ package org.app.Inventory;
 
 import org.app.Inventory.Holder.*;
 import org.app.Inventory.Item.*;
+import org.app.money.MoneyDecorator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -53,7 +54,7 @@ public class HolderTest {
 
         Item item = Item.builder()
         .itemName("First Item")
-        .sellingPrice(1000)
+        .sellingPrice(MoneyDecorator.getCurrentMoney(1000))
         .category("first")
         .imagePath("")
         .stock(10)
@@ -61,7 +62,7 @@ public class HolderTest {
 
         Item item1 = Item.builder()
                 .itemName("second Item")
-                .sellingPrice(1000)
+                .sellingPrice(MoneyDecorator.getCurrentMoney(1000))
                 .category("first")
                 .imagePath("")
                 .stock(10)
@@ -99,7 +100,7 @@ public class HolderTest {
     void inventoryTest(){
         Item item = Item.builder()
                 .itemName("First Item")
-                .sellingPrice(1000)
+                .sellingPrice(MoneyDecorator.getCurrentMoney(1000))
                 .category("first")
                 .imagePath("")
                 .build();
@@ -122,7 +123,7 @@ public class HolderTest {
         newInventory.addItem(
             Item.builder()
             .itemName("Second Item")
-            .sellingPrice(2000)
+            .sellingPrice(MoneyDecorator.getCurrentMoney(2000))
             .category("second")
             .imagePath("")
             .build()
@@ -137,7 +138,7 @@ public class HolderTest {
     void billItemTest(){
         Item item = Item.builder()
                 .itemName("First Item")
-                .sellingPrice(1000)
+                .sellingPrice(MoneyDecorator.getCurrentMoney(1000))
                 .category("first")
                 .imagePath("")
                 .build();
@@ -164,7 +165,7 @@ public class HolderTest {
         BillItem billItem = new BillItem(
                 Item.builder()
                         .itemName("test")
-                        .sellingPrice(10)
+                        .sellingPrice(MoneyDecorator.getCurrentMoney(10))
                         .category("cat")
                         .build()
         );
@@ -185,7 +186,7 @@ public class HolderTest {
         // Inventory Test
         Item item = Item.builder()
                 .itemName("1")
-                .sellingPrice(1000)
+                .sellingPrice(MoneyDecorator.getCurrentMoney(1000))
                 .category("first")
                 .imagePath("")
                 .build();
@@ -246,28 +247,28 @@ public class HolderTest {
         // Inventory Test
         Item item = Item.builder()
                 .itemName("1")
-                .sellingPrice(1000)
+                .sellingPrice(MoneyDecorator.getCurrentMoney(1000))
                 .category("first")
                 .imagePath("")
                 .build();
 
         Item item2 = Item.builder()
                 .itemName("2")
-                .sellingPrice(900)
+                .sellingPrice(MoneyDecorator.getCurrentMoney(900))
                 .category("first")
                 .imagePath("")
                 .build();
 
         Item item3 = Item.builder()
                 .itemName("3")
-                .sellingPrice(800)
+                .sellingPrice(MoneyDecorator.getCurrentMoney(800))
                 .category("first")
                 .imagePath("")
                 .build();
 
         Item item4 = Item.builder()
                 .itemName("4")
-                .sellingPrice(800)
+                .sellingPrice(MoneyDecorator.getCurrentMoney(800))
                 .category("second")
                 .imagePath("")
                 .build();
@@ -291,12 +292,12 @@ public class HolderTest {
 
         result = inventory.sortItemPrice(true);
         for (int i = 0; i < result.size() - 1; i++){
-            assertTrue(result.get(i).sellingPrice() <= result.get(i + 1).sellingPrice());
+            assertTrue(result.get(i).sellingPrice().getMoney() <= result.get(i + 1).sellingPrice().getMoney());
             System.out.println(result.get(i).itemName() + " " + result.get(i).sellingPrice());
         }
         result = inventory.sortItemPrice(false);
         for (int i = 0; i < result.size() - 1; i++){
-            assertTrue(result.get(i).sellingPrice() >= result.get(i + 1).sellingPrice());
+            assertTrue(result.get(i).sellingPrice().getMoney() >= result.get(i + 1).sellingPrice().getMoney());
             System.out.println(result.get(i).itemName() + " " + result.get(i).sellingPrice());
         }
     }
