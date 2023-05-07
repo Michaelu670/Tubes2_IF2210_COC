@@ -14,7 +14,7 @@ import java.util.List;
 
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @Root
 public class Inventory extends DataHolder implements ItemHolder {
 

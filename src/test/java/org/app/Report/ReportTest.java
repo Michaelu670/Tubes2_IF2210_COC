@@ -10,6 +10,7 @@ import org.app.Inventory.Item.Item;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ReportTest {
 
@@ -27,7 +28,7 @@ public class ReportTest {
         billItem.quantity(100);
         billItem.notes("test notes");
 
-        Bill bill = new Bill(1);
+        Bill bill = new Bill(1, 0);
         bill.addItem(billItem);
         bill.addItem(billItem);
         bill.addItem(billItem);
@@ -68,7 +69,7 @@ public class ReportTest {
         billItem.quantity(100);
         billItem.notes("test notes");
 
-        Bill bill = new Bill(1);
+        Bill bill = new Bill(1, 0);
         bill.addItem(billItem);
         bill.addItem(billItem);
         bill.addItem(billItem);

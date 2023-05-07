@@ -27,10 +27,18 @@ public abstract class ItemDescription implements Serializable {
     @Builder.Default
     @NonNull private String imagePath = "";
 
-    protected ItemDescription(Item item){
-        this.itemName = item.itemName();
+    protected ItemDescription(BillItem item){
+        this.itemName = new String(item.itemName());
         this.sellingPrice = item.sellingPrice();
-        this.category = item.category();
-        this.imagePath = item.imagePath();
+        this.category = new String( item.category());
+        this.imagePath = new String(item.imagePath());
     }
+
+    protected ItemDescription(Item item){
+        this.itemName = (item.itemName());
+        this.sellingPrice = item.sellingPrice();
+        this.category = (item.category());
+        this.imagePath =(item.imagePath());
+    }
+    
 }

@@ -4,20 +4,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.text.*;
 import java.util.*;
-public class Clock extends JPanel implements Runnable{
+public class Clock extends JLabel implements Runnable{
     Thread thread;
-    String timeString;
-    JLabel dayLabel;
-    JLabel timeLabel;
+//    JLabel dayLabel;
+//    JLabel timeLabel;
 
     public Clock(){
         thread = new Thread(this);
         thread.start();
 
-        timeLabel = new JLabel();
-        dayLabel = new JLabel();
-        this.add(dayLabel);
-        this.add(timeLabel);
+//        timeLabel = new JLabel();
+//        dayLabel = new JLabel();
     }
 
     public void run() {
@@ -35,10 +32,11 @@ public class Clock extends JPanel implements Runnable{
 
                 String dayNameString = new DateFormatSymbols().getWeekdays()[dayName];
                 String monthString = new DateFormatSymbols().getMonths()[month];
-                String dayString = String.format("%s, %d %s %d", dayNameString, day, monthString, year);
+                String dayString = String.format("%s, %d %s %d ", dayNameString, day, monthString, year);
                 String timeString = String.format("%d:%d:%d", hours, minutes, seconds);
-                dayLabel.setText(dayString);
-                timeLabel.setText(timeString);
+//                dayLabel.setText(dayString);
+//                timeLabel.setText(timeString);
+                this.setText(dayString + timeString);
 
                 thread.sleep(1000);  // interval given in milliseconds
             }

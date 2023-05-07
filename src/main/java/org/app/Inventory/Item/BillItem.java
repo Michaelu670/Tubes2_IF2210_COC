@@ -21,6 +21,7 @@ public class BillItem extends ItemDescription implements Serializable {
     @Element
     @NotNull private String orderType;
     @Element(required = false)
+    @Builder.Default
     @NotNull private String notes = "";
 
     public BillItem(Item item){
@@ -28,5 +29,12 @@ public class BillItem extends ItemDescription implements Serializable {
         this.quantity = 1;
         this.orderType = "Dine In";
         this.notes = "";
+    }
+
+    public BillItem(BillItem item){
+        super(item);
+        this.quantity = item.quantity();
+        this.orderType = new String(item.orderType());
+        this.notes = new String(item.notes());
     }
 }

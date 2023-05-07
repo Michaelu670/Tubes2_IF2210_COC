@@ -61,10 +61,35 @@ public class HomePage extends JPanel {
     }
 
     private void userDefinedConfig() {
-        memberButton.addActionListener(mainGUI.newTabAction(new MemberMenu(mainGUI)));
+        memberButton.addActionListener(newTabMember(mainGUI));
+        sistemUsahaBarangButton.addActionListener(newTabInventorySystem(mainGUI));
+        laporanButton.addActionListener(newTabReport(mainGUI));
         this.setName("Home Page");
 
     }
 
-    
+    private ActionListener newTabMember(MainGUI mainGUI) {
+        return new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                mainGUI.newTabAction(new MemberMenu(mainGUI)).actionPerformed(null);
+            }
+        };
+    }
+
+    private ActionListener newTabInventorySystem(MainGUI mainGUI) {
+        return new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                mainGUI.newTabAction(new InventorySystemMenu(mainGUI)).actionPerformed(null);
+            }
+        };
+    }
+
+    private ActionListener newTabReport(MainGUI mainGUI) {
+        return new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                mainGUI.newTabAction(new Report()).actionPerformed(null);
+            }
+        };
+    }
+
 }

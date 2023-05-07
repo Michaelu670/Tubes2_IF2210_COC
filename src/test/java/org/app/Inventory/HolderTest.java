@@ -18,7 +18,7 @@ public class HolderTest {
         assertNotNull(newInventory.itemList());
 
         // Bill Class
-        Bill newBill = new Bill(1);
+        Bill newBill = new Bill(1 , 0);
         assertNotNull(newBill.itemList());
 
         // Fixed Bill Class
@@ -39,7 +39,7 @@ public class HolderTest {
 
     @Test
     void kasirTest(){
-        Bill newBill = new Bill(1);
+        Bill newBill = new Bill(1, 0);
 
 
         // Kasir Class
@@ -56,16 +56,43 @@ public class HolderTest {
         .sellingPrice(1000)
         .category("first")
         .imagePath("")
+        .stock(10)
         .build();
 
+        Item item1 = Item.builder()
+                .itemName("second Item")
+                .sellingPrice(1000)
+                .category("first")
+                .imagePath("")
+                .stock(10)
+                .build();
+
+        Inventory newInventory = new Inventory();
+        newInventory.addItem(item);
+        newInventory.addItem(item1);
+
         BillItem billItem = new BillItem(item);
+        BillItem billitem1 = new BillItem(item1);
         newBill.addItem(billItem);
+        newBill.addItem(billitem1);
 
         assert(newBill.itemList().contains(billItem));
 
-        FixedBill fixedBill = newCashier.getFixedBill(1);
-        assertEquals(fixedBill.itemList().size(), 1);
+        FixedBill fixedBill = newCashier.getFixedBill(1, newInventory);
+        assertEquals(fixedBill.itemList().size(), 2);
         assert(fixedBill.itemList().contains(billItem));
+        assertEquals(item.stock(), 9);
+
+        // null test
+        assert(newCashier.billList().isEmpty());
+        newCashier.addBill(newBill);
+        assertEquals(newCashier.billList().size(), 1);
+        assertEquals(newBill.itemList().size(), 2);
+
+        newInventory.removeItem(item);
+        assertEquals(newCashier.billList().size(), 1);
+        assertEquals(newCashier.billList().get(0).itemList().size(), 2);
+        assertThrows(IndexOutOfBoundsException.class, () -> newCashier.getFixedBill(1, newInventory)); 
     }
 
     @Test
@@ -118,7 +145,7 @@ public class HolderTest {
         BillItem billItem = new BillItem(item);
 
         // Bill Class
-        Bill newBill = new Bill(1);
+        Bill newBill = new Bill(1, 1);
         newBill.addItem(billItem);
         assertEquals(newBill.itemList().size(), 1);
         assert(newBill.itemList().contains(billItem));
@@ -142,7 +169,7 @@ public class HolderTest {
                         .build()
         );
 
-        Bill bill = new Bill(1);
+        Bill bill = new Bill(1, 0);
         bill.addItem(billItem);
 
         FixedBill fixedBill = new FixedBill(bill);
@@ -181,7 +208,7 @@ public class HolderTest {
         // Bill Test
         BillItem billItem = new BillItem(item);
 
-        Bill bill = new Bill(1);
+        Bill bill = new Bill(1, 0);
         bill.addItem(billItem);
 
         BillItem editBill = bill.getItem(0);
