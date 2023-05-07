@@ -1,280 +1,390 @@
 {
   "customerList": [
     {
+      "diskon": 0.1,
+      "poinRate": 0.01,
+      "name": "nama customer ke-0",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
+      "id": 0,
+      "bills": [
+        {
+          "user": 0,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "diskon": 0.1,
+      "poinRate": 0.01,
+      "name": "nama customer ke-1",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 1,
-      "bills": []
+      "bills": [
+        {
+          "user": 1,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     },
     {
+      "diskon": 0.1,
+      "poinRate": 0.01,
+      "name": "nama customer ke-2",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 2,
-      "bills": []
+      "bills": [
+        {
+          "user": 2,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     },
     {
+      "poinRate": 0.01,
+      "name": "nama customer ke-3",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 3,
-      "bills": []
+      "bills": [
+        {
+          "user": 3,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     },
     {
+      "poinRate": 0.01,
+      "name": "nama customer ke-4",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 4,
-      "bills": []
+      "bills": [
+        {
+          "user": 4,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     },
     {
+      "poinRate": 0.01,
+      "name": "nama customer ke-5",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 5,
-      "bills": []
+      "bills": [
+        {
+          "user": 5,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     },
     {
+      "diskon": 0.1,
+      "poinRate": 0.01,
+      "name": "nama customer ke-6",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 6,
-      "bills": []
+      "bills": [
+        {
+          "user": 6,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     },
     {
+      "diskon": 0.1,
+      "poinRate": 0.01,
+      "name": "nama customer ke-7",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 7,
-      "bills": []
+      "bills": [
+        {
+          "user": 7,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     },
     {
+      "diskon": 0.1,
+      "poinRate": 0.01,
+      "name": "nama customer ke-8",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 8,
-      "bills": []
+      "bills": [
+        {
+          "user": 8,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     },
     {
+      "diskon": 0.1,
+      "poinRate": 0.01,
+      "name": "nama customer ke-9",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 9,
-      "bills": []
+      "bills": [
+        {
+          "user": 9,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     },
     {
+      "diskon": 0.1,
+      "poinRate": 0.01,
+      "name": "nama customer ke-10",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 10,
-      "bills": []
+      "bills": [
+        {
+          "user": 10,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     },
     {
+      "diskon": 0.1,
+      "poinRate": 0.01,
+      "name": "nama customer ke-11",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 11,
-      "bills": []
+      "bills": [
+        {
+          "user": 11,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     },
     {
+      "diskon": 0.1,
+      "poinRate": 0.01,
+      "name": "nama customer ke-12",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 12,
-      "bills": []
+      "bills": [
+        {
+          "user": 12,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     },
     {
+      "diskon": 0.1,
+      "poinRate": 0.01,
+      "name": "nama customer ke-13",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 13,
-      "bills": []
+      "bills": [
+        {
+          "user": 13,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     },
     {
+      "poinRate": 0.01,
+      "name": "nama customer ke-14",
+      "telephoneNumber": "no telp",
+      "point": 0.0,
+      "active": true,
       "id": 14,
-      "bills": []
-    },
-    {
-      "id": 15,
-      "bills": []
-    },
-    {
-      "id": 16,
-      "bills": []
-    },
-    {
-      "id": 17,
-      "bills": []
-    },
-    {
-      "id": 18,
-      "bills": []
-    },
-    {
-      "id": 19,
-      "bills": []
-    },
-    {
-      "id": 20,
-      "bills": []
-    },
-    {
-      "id": 21,
-      "bills": []
-    },
-    {
-      "id": 22,
-      "bills": []
-    },
-    {
-      "id": 23,
-      "bills": []
-    },
-    {
-      "id": 24,
-      "bills": []
-    },
-    {
-      "id": 25,
-      "bills": []
-    },
-    {
-      "id": 26,
-      "bills": []
-    },
-    {
-      "id": 27,
-      "bills": []
-    },
-    {
-      "id": 28,
-      "bills": []
-    },
-    {
-      "id": 29,
-      "bills": []
-    },
-    {
-      "id": 30,
-      "bills": []
-    },
-    {
-      "id": 31,
-      "bills": []
-    },
-    {
-      "id": 32,
-      "bills": []
-    },
-    {
-      "id": 33,
-      "bills": []
-    },
-    {
-      "id": 34,
-      "bills": []
-    },
-    {
-      "id": 35,
-      "bills": []
-    },
-    {
-      "id": 36,
-      "bills": []
-    },
-    {
-      "id": 37,
-      "bills": []
-    },
-    {
-      "id": 38,
-      "bills": []
-    },
-    {
-      "id": 39,
-      "bills": []
-    },
-    {
-      "id": 40,
-      "bills": []
-    },
-    {
-      "id": 41,
-      "bills": []
-    },
-    {
-      "id": 42,
-      "bills": []
-    },
-    {
-      "id": 43,
-      "bills": []
-    },
-    {
-      "id": 44,
-      "bills": []
-    },
-    {
-      "id": 45,
-      "bills": []
-    },
-    {
-      "id": 46,
-      "bills": []
-    },
-    {
-      "id": 47,
-      "bills": []
-    },
-    {
-      "id": 48,
-      "bills": []
-    },
-    {
-      "id": 49,
-      "bills": []
-    },
-    {
-      "id": 50,
-      "bills": []
-    },
-    {
-      "id": 51,
-      "bills": []
-    },
-    {
-      "id": 52,
-      "bills": []
-    },
-    {
-      "id": 53,
-      "bills": []
-    },
-    {
-      "id": 54,
-      "bills": []
-    },
-    {
-      "id": 55,
-      "bills": []
-    },
-    {
-      "id": 56,
-      "bills": []
-    },
-    {
-      "id": 57,
-      "bills": []
-    },
-    {
-      "id": 58,
-      "bills": []
-    },
-    {
-      "id": 59,
-      "bills": []
-    },
-    {
-      "id": 60,
-      "bills": []
-    },
-    {
-      "id": 61,
-      "bills": []
-    },
-    {
-      "id": 62,
-      "bills": []
-    },
-    {
-      "id": 63,
-      "bills": []
-    },
-    {
-      "id": 64,
-      "bills": []
-    },
-    {
-      "id": 65,
-      "bills": []
-    },
-    {
-      "id": 66,
-      "bills": []
-    },
-    {
-      "id": 67,
-      "bills": []
-    },
-    {
-      "id": 68,
-      "bills": []
-    },
-    {
-      "id": 69,
-      "bills": []
+      "bills": [
+        {
+          "user": 14,
+          "totalPrice": 0.0,
+          "itemList": [
+            {
+              "quantity": 1,
+              "orderType": "Dine In",
+              "notes": "",
+              "itemName": "item",
+              "sellingPrice": 0.0,
+              "category": "makanan",
+              "imagePath": "image/item.png"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,214 @@
+<cashier>
+   <billList class="java.util.ArrayList">
+      <bill>
+         <user>0</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>1</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>2</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>3</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>4</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>5</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>6</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>7</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>8</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>9</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>10</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>11</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>12</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>13</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+      <bill>
+         <user>14</user>
+         <itemList class="java.util.ArrayList">
+            <billItem>
+               <itemName>item</itemName>
+               <sellingPrice>0.0</sellingPrice>
+               <category>makanan</category>
+               <imagePath>image/item.png</imagePath>
+               <quantity>1</quantity>
+               <orderType>Dine In</orderType>
+               <notes></notes>
+            </billItem>
+         </itemList>
+      </bill>
+   </billList>
+</cashier>

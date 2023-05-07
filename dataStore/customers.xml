@@ -1,0 +1,349 @@
+<customers>
+   <customerList class="java.util.ArrayList">
+      <customer class="org.app.Customer.VIP" id="0">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>0</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-0</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.VIP" id="1">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>1</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-1</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.VIP" id="2">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>2</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-2</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.Member" id="3">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>3</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-3</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.Member" id="4">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>4</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-4</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.Member" id="5">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>5</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-5</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.VIP" id="6">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>6</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-6</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.VIP" id="7">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>7</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-7</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.VIP" id="8">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>8</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-8</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.VIP" id="9">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>9</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-9</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.VIP" id="10">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>10</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-10</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.VIP" id="11">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>11</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-11</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.VIP" id="12">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>12</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-12</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.VIP" id="13">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>13</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-13</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+      <customer class="org.app.Customer.Member" id="14">
+         <bills class="java.util.ArrayList">
+            <fixedBill>
+               <user>14</user>
+               <totalPrice>0.0</totalPrice>
+               <itemList class="java.util.ArrayList">
+                  <billItem>
+                     <itemName>item</itemName>
+                     <sellingPrice>0.0</sellingPrice>
+                     <category>makanan</category>
+                     <imagePath>image/item.png</imagePath>
+                     <quantity>1</quantity>
+                     <orderType>Dine In</orderType>
+                     <notes></notes>
+                  </billItem>
+               </itemList>
+            </fixedBill>
+         </bills>
+         <name>nama customer ke-14</name>
+         <telephoneNumber>no telp</telephoneNumber>
+         <point>0.0</point>
+         <active>true</active>
+      </customer>
+   </customerList>
+</customers>
