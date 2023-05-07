@@ -1,5 +1,6 @@
-package org.app.GUI.Component;
+package org.app.GUI.Component.Features;
 
+import org.app.GUI.Component.Report;
 import org.app.Report.ReportWriter;
 
 import javax.swing.*;
