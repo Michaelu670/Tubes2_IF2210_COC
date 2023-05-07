@@ -2,18 +2,12 @@ package org.app.Customer;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.app.DataStore.DataHolder;
-import org.app.Inventory.Holder.Bill;
-import org.app.Inventory.Holder.FixedBill;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Getter @Setter
 @Root
@@ -44,22 +38,26 @@ public class Customers {
                 .filter(customer -> customer.getId() == id)
                 .findAny().get();
     }
-    public void turnToMember(int id, String name, String telephoneNumber) {
+    public void turnToMember(int id, String name, String telephoneNumber, int point, boolean status) {
         Customer customer = getCustomerFromID(id);
         customerList.remove(customer);
         customerList.add(customer.getId(), new CustomerBuilder(customer)
                 .name(name)
                 .telephoneNumber(telephoneNumber)
+                .point(point)
+                .status(status)
                 .setMember()
                 .build());
     }
 
-    public void turnToVIP(int id, String name, String telephoneNumber) {
+    public void turnToVIP(int id, String name, String telephoneNumber, int point, boolean status) {
         Customer customer = getCustomerFromID(id);
         customerList.remove(customer);
         customerList.add(customer.getId(), new CustomerBuilder(customer)
                 .name(name)
                 .telephoneNumber(telephoneNumber)
+                .point(point)
+                .status(status)
                 .setVIP()
                 .build());
     }
