@@ -98,7 +98,7 @@ public class Report extends JPanel {
                 billItem.quantity(100);
                 billItem.notes("test notes");
 
-                Bill bill = new Bill(1);
+                Bill bill = new Bill(1, 0);
                 bill.addItem(billItem);
                 bill.addItem(billItem);
                 bill.addItem(billItem);
