@@ -3,11 +3,13 @@ package org.app.Inventory;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.app.DataStore.DataHolder;
 import org.app.Inventory.Holder.Bill;
+import org.app.Inventory.Holder.FixedBill;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Accessors(fluent = true)
+@EqualsAndHashCode
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Cashier extends DataHolder implements BillHolder {
@@ -36,5 +39,12 @@ public class Cashier extends DataHolder implements BillHolder {
             }
         }
         return null;
+    }
+
+    public FixedBill getFixedBill(int user){
+        Bill bill = getBill(user);
+        FixedBill fixedBill = bill.confirm();
+        removeBill(bill);
+        return fixedBill;
     }
 }

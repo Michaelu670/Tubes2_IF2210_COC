@@ -2,9 +2,12 @@ package org.app.Customer;
 
 import java.util.List;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.app.Inventory.Holder.FixedBill;
 
+@NoArgsConstructor
 class Member extends RegisteredCustomer {
     @Getter
     private final double poinRate = 0.01;

@@ -5,7 +5,11 @@ import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.simpleframework.xml.Serializer;
+import org.simpleframework.xml.convert.AnnotationStrategy;
+import org.simpleframework.xml.core.Persister;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
@@ -16,19 +20,14 @@ public class XMLDataAdapter implements DataAdapter {
 
     @Override
     public void saveData(String fileLocation) throws Exception{
-        JAXBContext context = JAXBContext.newInstance(obj.getClass());
-        Marshaller marshaller = context.createMarshaller();
-        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-        marshaller.marshal(obj, new FileWriter(fileLocation));
+        Serializer serializer = new Persister(new AnnotationStrategy());
+        File file = new File(fileLocation);
+        serializer.write(obj, file);
     }
 
     @Override
     public void loadData(String fileLocation) throws Exception {
-        JAXBContext context = JAXBContext.newInstance(obj.getClass());
-        Unmarshaller unmarshaller = context.createUnmarshaller();
-
-        obj.setData(obj.getClass()
-                .cast(unmarshaller.unmarshal(new FileReader(fileLocation))));
+        Serializer serializer = new Persister(new AnnotationStrategy());
+        obj.setData(serializer.read(obj.getClass(), new File(fileLocation)));
     }
 }

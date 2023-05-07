@@ -34,6 +34,7 @@ public class DataStore {
 
     public void save() {
         try {
+            changeDataFormat();
             Files.createDirectories(Paths.get(Setting.getInstance().getStoragePath()));
             settings.saveData(settingFileLocation);
             inventorySaver.saveData(fileLocation("inventory"));
@@ -59,6 +60,7 @@ public class DataStore {
 
     public void load() {
         try {
+            changeDataFormat();
             // assumption: one file doesn't exist means all file don't
             inventorySaver.loadData(fileLocation("inventory"));
             cashierSaver.loadData(fileLocation("cashier"));
