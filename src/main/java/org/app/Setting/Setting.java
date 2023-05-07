@@ -28,7 +28,7 @@ public class Setting extends DataHolder {
 
     // Constructor
     private Setting() {
-        this.storagePath = "";
+        this.storagePath = "dataStore";
         this.dataFormat = "JSON";
         this.pluginPaths = new ArrayList<String>();
     }
