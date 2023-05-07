@@ -1,5 +1,5 @@
 <setting>
    <storagePath>dataStore</storagePath>
-   <dataFormat>json</dataFormat>
+   <dataFormat>xml</dataFormat>
    <pluginPaths/>
 </setting>
