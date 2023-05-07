@@ -24,8 +24,9 @@ public class Bill implements PurchaseDescription, ItemHolder, Serializable {
     @Builder.Default
     private List<BillItem> itemList = new ArrayList<>();
     
-    public Bill(int user) {
+    public Bill(int user, int billSize) {
         this.user = user;
+        this.billId = billSize;
         this.itemList = new ArrayList<>();
     }
     @Override
