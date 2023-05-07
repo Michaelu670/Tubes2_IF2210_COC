@@ -1,5 +1,7 @@
 package org.app.GUI.Component.Features;
 
+import org.app.Inventory.Item.BillItem;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -46,5 +48,32 @@ public class GUIUtil {
         Image image = imageIcon.getImage();
         Image newimg = image.getScaledInstance(120, 120,  java.awt.Image.SCALE_SMOOTH);
         return new ImageIcon(newimg);
+    }
+
+    public static class ItemCellRenderer implements ListCellRenderer<BillItem> {
+        private JPanel panel;
+        private JLabel nameLabel;
+        private JLabel quantityLabel;
+
+        public ItemCellRenderer() {
+            panel = new JPanel(new BorderLayout());
+            nameLabel = new JLabel();
+            quantityLabel = new JLabel();
+            panel.add(nameLabel, BorderLayout.WEST);
+            panel.add(quantityLabel, BorderLayout.EAST);
+        }
+
+        @Override
+        public Component getListCellRendererComponent(JList<? extends BillItem> list, BillItem item, int index,
+                                                      boolean isSelected, boolean cellHasFocus) {
+            nameLabel.setText(item.itemName());
+            if(item.quantity() == 0){
+                quantityLabel.setText("Quantity");
+            }else{
+                quantityLabel.setText(String.valueOf(item.quantity()));
+            }
+            panel.setBackground(isSelected ? list.getSelectionBackground() : list.getBackground());
+            return panel;
+        }
     }
 }

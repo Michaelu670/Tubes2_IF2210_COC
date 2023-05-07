@@ -26,7 +26,7 @@ public class Customers {
     }
     public Customer newCustomer() {
         Customer customer =
-                new Customer(customerList
+                new Customer(customerList.isEmpty() ? 0 : customerList
                         .get(customerList.size() - 1)
                         .getId() + 1
                 , new ArrayList<>());
