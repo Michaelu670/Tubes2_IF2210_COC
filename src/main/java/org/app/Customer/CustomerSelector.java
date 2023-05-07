@@ -85,4 +85,18 @@ public class CustomerSelector {
         return customerList;
     }
 
+    public List<Member> getAsMember() {
+        customerList.sort(Comparator.comparingInt(Customer::getId));
+        return customerList.stream()
+                .map(x -> (Member)x)
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public List<VIP> getAsVIP() {
+        customerList.sort(Comparator.comparingInt(Customer::getId));
+        return customerList.stream()
+                .map(x -> (VIP)x)
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
 }
