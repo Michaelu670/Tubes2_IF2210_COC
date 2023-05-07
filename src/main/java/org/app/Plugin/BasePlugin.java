@@ -5,21 +5,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public abstract class BasePlugin {
-    protected static JFrame frame = null;
     protected static JPanel panel = null;
     protected static List<String> data; // Data from db
 
     public BasePlugin() {
-        if (frame == null) {
-            frame = new JFrame();
-            frame.setSize(1000, 500);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setLocationRelativeTo(null);
-
+        if (panel == null) {
             panel = new JPanel();
             // Get data from db
             data = new ArrayList<>(List.of("coffee", "bread", "coffee", "porridge", "tea", "tea")); // Temporary data
