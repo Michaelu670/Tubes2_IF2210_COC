@@ -56,16 +56,43 @@ public class HolderTest {
         .sellingPrice(1000)
         .category("first")
         .imagePath("")
+        .stock(10)
         .build();
 
+        Item item1 = Item.builder()
+                .itemName("second Item")
+                .sellingPrice(1000)
+                .category("first")
+                .imagePath("")
+                .stock(10)
+                .build();
+
+        Inventory newInventory = new Inventory();
+        newInventory.addItem(item);
+        newInventory.addItem(item1);
+
         BillItem billItem = new BillItem(item);
+        BillItem billitem1 = new BillItem(item1);
         newBill.addItem(billItem);
+        newBill.addItem(billitem1);
 
         assert(newBill.itemList().contains(billItem));
 
-        FixedBill fixedBill = newCashier.getFixedBill(1);
-        assertEquals(fixedBill.itemList().size(), 1);
+        FixedBill fixedBill = newCashier.getFixedBill(1, newInventory);
+        assertEquals(fixedBill.itemList().size(), 2);
         assert(fixedBill.itemList().contains(billItem));
+        assertEquals(item.stock(), 9);
+
+        // null test
+        assert(newCashier.billList().isEmpty());
+        newCashier.addBill(newBill);
+        assertEquals(newCashier.billList().size(), 1);
+        assertEquals(newBill.itemList().size(), 2);
+
+        newInventory.removeItem(item);
+        assertEquals(newCashier.billList().size(), 1);
+        assertEquals(newCashier.billList().get(0).itemList().size(), 2);
+        assertThrows(IndexOutOfBoundsException.class, () -> newCashier.getFixedBill(1, newInventory)); 
     }
 
     @Test

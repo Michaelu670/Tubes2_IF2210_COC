@@ -19,8 +19,11 @@ import java.util.UUID;
 public class Bill implements PurchaseDescription, ItemHolder, Serializable {
 
     private int user;  // change to Member instance
+    private int billId;
+
     @Builder.Default
     private List<BillItem> itemList = new ArrayList<>();
+    
     public Bill(int user) {
         this.user = user;
         this.itemList = new ArrayList<>();
@@ -56,7 +59,25 @@ public class Bill implements PurchaseDescription, ItemHolder, Serializable {
                 .sum();
     }
 
-    public @NonNull FixedBill confirm(){
+    public @NonNull FixedBill confirm(Inventory stockList){
+
+        if (stockList.itemList().isEmpty()){
+            throw new IndexOutOfBoundsException("Stock is empty");
+        }
+
+        if (itemList.isEmpty()){
+            throw new IndexOutOfBoundsException("Item is empty");
+        }
+
+        if (!checkItemNotNull()){
+            throw new NullPointerException("Item is null");
+        }
+
+        if (!checkStock(stockList)){
+            throw new IllegalArgumentException("Stock is not enough");
+        }
+
+        reduceStock(stockList);
         return new FixedBill(this);
     }
 
@@ -69,12 +90,26 @@ public class Bill implements PurchaseDescription, ItemHolder, Serializable {
         return true;
     }
 
-    // private boolean checkStock(List<Item> stockList){
-    //     for(BillItem item : itemList){
-    //         if(item.quantity() > stockList.get(stockList.indexOf((Item) item)).stock()){
-    //             return false;
-    //         }
-    //     }
-    //     return true;
-    // }
+    private boolean checkStock(Inventory stockList){
+        for(BillItem item : itemList){
+            List<Item> stockItem = stockList.searchItemName(item.itemName());
+            if (stockItem.isEmpty()){
+                throw new IndexOutOfBoundsException("Item is not found");
+            }
+            if(item.quantity() > stockItem.get(0).stock()){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void reduceStock(Inventory stockList){
+        for(BillItem item : itemList){
+            List<Item> stockItem = stockList.searchItemName(item.itemName());
+            if (stockItem.isEmpty()){
+                continue;
+            }
+            stockItem.get(0).stock(stockList.searchItemName(item.itemName()).get(0).stock() - item.quantity());
+        }
+    }
 }

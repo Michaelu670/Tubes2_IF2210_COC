@@ -21,6 +21,7 @@ public class BillItem extends ItemDescription implements Serializable {
     @Element
     @NotNull private String orderType;
     @Element(required = false)
+    @Builder.Default
     @NotNull private String notes = "";
 
     public BillItem(Item item){

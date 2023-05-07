@@ -19,7 +19,7 @@ import java.util.List;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @Root
 public class Inventory extends DataHolder implements ItemHolder {
 
