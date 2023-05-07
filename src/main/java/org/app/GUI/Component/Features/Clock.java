@@ -1,4 +1,4 @@
-package org.app.GUI.Component;
+package org.app.GUI.Component.Features;
 
 import javax.swing.*;
 import java.awt.*;

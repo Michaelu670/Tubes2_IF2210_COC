@@ -2,6 +2,7 @@ package org.app.GUI.Component;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import org.app.GUI.Component.Features.Clock;
 import org.app.GUI.MainGUI;
 
 import javax.swing.*;

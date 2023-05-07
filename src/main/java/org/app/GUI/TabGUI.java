@@ -21,7 +21,9 @@ public class TabGUI extends JTabbedPane{
     }
 
     public void removeTab() {
-        this.remove(this.getSelectedIndex());
-        currentTab = this.getTabCount();
+        if(this.getTabCount() != 0){
+            this.remove(this.getSelectedIndex());
+            currentTab = this.getTabCount();
+        }
     }
 }
