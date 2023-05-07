@@ -10,6 +10,7 @@ import javax.swing.*;
 import javax.swing.filechooser.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 import java.util.*;
 
 public class SettingGUI extends JPanel {
@@ -93,6 +94,7 @@ public class SettingGUI extends JPanel {
         return new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 JFileChooser dialog = new JFileChooser();
+                dialog.setCurrentDirectory(new File(System.getProperty("user.dir")));
                 dialog.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 int choice = dialog.showSaveDialog(null);
                 if (choice == JFileChooser.APPROVE_OPTION) {
@@ -107,6 +109,7 @@ public class SettingGUI extends JPanel {
         return new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 JFileChooser dialog = new JFileChooser();
+                dialog.setCurrentDirectory(new File(System.getProperty("user.dir")));
                 dialog.setAcceptAllFileFilterUsed(false);
                 dialog.addChoosableFileFilter(new FileNameExtensionFilter("*.jar", "jar"));
                 int choice = dialog.showSaveDialog(null);

@@ -194,6 +194,8 @@ public class InventorySystemSell extends JPanel {
         return new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 JFileChooser dialog = new JFileChooser();
+                dialog.setCurrentDirectory(new File(System.getProperty("user.dir")));
+
                 int choice = dialog.showSaveDialog(null);
                 if (choice == JFileChooser.APPROVE_OPTION) {
                     String filepath = dialog.getSelectedFile().getAbsolutePath();
@@ -205,6 +207,8 @@ public class InventorySystemSell extends JPanel {
 
     private void refresh() {
         this.removeAll();
+        this.revalidate();
+        this.repaint();
         final JLabel label1 = new JLabel();
         label1.setText("Jual Barang");
         this.add(label1, new GridConstraints(0, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
