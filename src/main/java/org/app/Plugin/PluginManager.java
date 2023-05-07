@@ -18,7 +18,7 @@ public class PluginManager extends DataHolder {
     public static void register(String filePath, MainGUI mainGUI) {
         // Add file to db
         filePaths.add(filePath);
-//        PluginLoader.load(filePath, mainGUI);
+        PluginLoader.load(filePath, mainGUI);
     }
 
     public static void remove(String filePath) {
@@ -28,7 +28,7 @@ public class PluginManager extends DataHolder {
     public static void enableAll(MainGUI mainGUI) {
         // Get all file from db, then load all plugin
         for (String filePath : filePaths) {
-//            PluginLoader.load(filePath, mainGUI);
+            PluginLoader.load(filePath, mainGUI);
         }
     }
 }
