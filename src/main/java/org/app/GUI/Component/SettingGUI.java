@@ -2,6 +2,8 @@ package org.app.GUI.Component;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+
+import org.app.GUI.MainGUI;
 import org.app.Setting.Setting;
 
 import javax.swing.*;
@@ -19,7 +21,9 @@ public class SettingGUI extends JPanel {
     private JButton addPluginButton;
     private JButton deletePluginButton;
     private String storagePath;
-    public SettingGUI() {
+    private MainGUI mainGUI;
+
+    public SettingGUI(MainGUI mainGUI) {
         this.setLayout(new GridLayoutManager(5, 3, new Insets(0, 0, 0, 0), -1, -1));
         final JLabel label1 = new JLabel();
         label1.setText("Data Format");
@@ -52,6 +56,7 @@ public class SettingGUI extends JPanel {
         deletePluginButton.setText("Delete Plugin");
         this.add(deletePluginButton, new GridConstraints(4, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
+        this.mainGUI = mainGUI;
         userDefinedConfig();
     }
 
@@ -107,7 +112,7 @@ public class SettingGUI extends JPanel {
                 int choice = dialog.showSaveDialog(null);
                 if (choice == JFileChooser.APPROVE_OPTION) {
                     String filepath = dialog.getSelectedFile().getAbsolutePath();
-                    Setting.getInstance().addPluginPath(filepath);
+                    Setting.getInstance().addPluginPath(filepath, mainGUI);
                     defaultListModel1.addElement(filepath);
                 }
             }
