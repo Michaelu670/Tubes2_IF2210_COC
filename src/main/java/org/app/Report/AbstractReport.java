@@ -54,11 +54,19 @@ public abstract class AbstractReport implements ReportWriter {
 
         currentChapter.add(paragraph);
         for(int j = 0 ; j < getBillItem(idx).size(); j++){
-            Paragraph subPara = new Paragraph("Item " + j+1, subFont);
+            Paragraph subPara = new Paragraph("Item " + (j+1), subFont);
             Section subCatPart = currentChapter.addSection(subPara);
             createList(subCatPart ,idx, j);
             currentChapter.add(paragraph);
         }
+        Paragraph endParagraph = new Paragraph();
+        addEmptyLine(endParagraph, 1);
+
+        endParagraph.add(new Paragraph(
+                "Total Price : " + listOfReport.get(idx).totalPrice(),
+                normalBold));
+        currentChapter.add(endParagraph);
+
         document.add(currentChapter);
     }
     protected static void createList(Section section, int idx, int j) {

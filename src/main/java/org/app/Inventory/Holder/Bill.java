@@ -8,6 +8,7 @@ import org.app.Inventory.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @SuperBuilder
@@ -16,6 +17,7 @@ import java.util.List;
 public class Bill implements PurchaseDescription, ItemHolder {
 
     private final int user;  // change to Member instance
+    // private final int billId;
 
     @Builder.Default
     private List<BillItem> itemList = new ArrayList<>();
@@ -46,7 +48,7 @@ public class Bill implements PurchaseDescription, ItemHolder {
     @Override
     public double totalPrice() {
         return itemList.stream()
-                .mapToDouble(BillItem::sellingPrice)
+                .mapToDouble(item -> item.sellingPrice() * item.quantity())                
                 .sum();
     }
 

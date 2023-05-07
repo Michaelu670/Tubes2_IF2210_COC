@@ -31,6 +31,12 @@ public class ReportTest {
         bill.addItem(billItem);
         bill.addItem(billItem);
         bill.addItem(billItem);
+        bill.addItem(billItem);
+        bill.addItem(billItem);
+        bill.addItem(billItem);
+        bill.addItem(billItem);
+        bill.addItem(billItem);
+        bill.addItem(billItem);
         
         FixedBill fixedBill = new FixedBill(bill);
         
@@ -63,6 +69,12 @@ public class ReportTest {
         billItem.notes("test notes");
 
         Bill bill = new Bill(1);
+        bill.addItem(billItem);
+        bill.addItem(billItem);
+        bill.addItem(billItem);
+        bill.addItem(billItem);
+        bill.addItem(billItem);
+        bill.addItem(billItem);
         bill.addItem(billItem);
         bill.addItem(billItem);
         bill.addItem(billItem);
