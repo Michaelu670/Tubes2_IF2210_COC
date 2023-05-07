@@ -24,13 +24,12 @@ public class Customers {
     public Customers() {
         customerList = new ArrayList<>();
     }
-    public Customer newCustomer(FixedBill bill) {
+    public Customer newCustomer() {
         Customer customer =
                 new Customer(customerList
                         .get(customerList.size() - 1)
                         .getId() + 1
                 , new ArrayList<>());
-        customer.getBills().add(bill);
 
         customerList.add(customer);
         return customer;
