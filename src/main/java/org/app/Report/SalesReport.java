@@ -2,18 +2,17 @@ package org.app.Report;
 
 
 import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.PdfWriter;
 import lombok.AllArgsConstructor;
+import lombok.Setter;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Date;
+
 
 @AllArgsConstructor
 public class SalesReport extends AbstractReport {
-    private final static String fileName = "SalesReport.pdf";
+
+    @Setter
+    private static String fileName = "SalesReport.pdf";
     private final static String title = "Sales Report";
 
     public void writeReport()
