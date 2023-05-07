@@ -8,7 +8,6 @@ import org.app.Inventory.Item.Item;
 import org.app.Setting.Setting;
 import org.codehaus.plexus.util.FileUtils;
 import org.junit.jupiter.api.Assertions;
-import org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -46,11 +45,11 @@ public class DataStoreTest {
             int status = random.nextInt(3);
             if (status == 1) {
                 store.customers().turnToMember(i,
-                        "nama customer ke-" + i, "no telp");
+                        "nama customer ke-" + i, "no telp", 0, true);
             }
             else if (status == 2) {
                 store.customers().turnToVIP(i,
-                        "nama customer ke-" + i, "no telp");
+                        "nama customer ke-" + i, "no telp", 0, true);
             }
 
             Bill bill = Bill.builder().user(i).itemList(new ArrayList<>()).build();

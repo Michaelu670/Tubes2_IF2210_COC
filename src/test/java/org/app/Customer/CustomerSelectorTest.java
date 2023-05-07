@@ -1,6 +1,5 @@
 package org.app.Customer;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -14,8 +13,8 @@ public class CustomerSelectorTest {
         customers.getCustomerList().add(new Customer(2, new ArrayList<>()));
         customers.getCustomerList().add(new Customer(0, new ArrayList<>()));
         customers.getCustomerList().add(new Customer(1, new ArrayList<>()));
-        customers.turnToMember(1, "member", "08member");
-        customers.turnToVIP(2, "vip", "08vip");
+        customers.turnToMember(1, "member", "08member", 0, true);
+        customers.turnToVIP(2, "vip", "08vip", 0, true);
         return customers;
     }
     @Test
