@@ -1,5 +1,0 @@
-<customerTypeAdapter>
-   <customerList class="java.util.ArrayList"/>
-   <memberList class="java.util.ArrayList"/>
-   <vipList class="java.util.ArrayList"/>
-</customerTypeAdapter>
