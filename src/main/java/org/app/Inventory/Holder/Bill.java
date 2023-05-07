@@ -9,7 +9,6 @@ import org.app.Inventory.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Data
 @SuperBuilder
@@ -30,12 +29,12 @@ public class Bill implements PurchaseDescription, ItemHolder, Serializable {
         this.itemList = new ArrayList<>();
     }
     @Override
-    public <T extends ItemDescription> void addItem(T item) {
+    public void addItem(ItemDescription item) {
         itemList.add((BillItem) item);
     }
 
     @Override
-    public <T extends ItemDescription> void removeItem(T item) {
+    public void removeItem(ItemDescription item) {
         itemList.remove((BillItem) item);
     }
 

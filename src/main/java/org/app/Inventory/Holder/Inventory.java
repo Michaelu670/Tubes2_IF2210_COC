@@ -23,12 +23,12 @@ public class Inventory extends DataHolder implements ItemHolder {
     private List<Item> itemList = new ArrayList<>();
 
     @Override
-    public <T extends ItemDescription> void addItem(T item) {
+    public void addItem(ItemDescription item) {
         itemList.add((Item) item);
     }
 
     @Override
-    public <T extends ItemDescription> void removeItem(T item) {
+    public  void removeItem(ItemDescription item) {
         itemList.remove((Item) item);
     }
 
