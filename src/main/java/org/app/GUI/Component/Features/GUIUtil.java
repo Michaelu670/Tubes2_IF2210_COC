@@ -2,6 +2,8 @@ package org.app.GUI.Component.Features;
 
 import org.app.Inventory.Item.BillItem;
 
+import com.itextpdf.text.Jpeg;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -20,7 +22,6 @@ public class GUIUtil {
         };
     }
 
-//    public static ListCellRenderer<? super String> imageListRenderer(String[] imagePath){
     public static ListCellRenderer<? super String> imageListRenderer(String imagePaths[]){
         return (list2, value, index, isSelected, cellHasFocus) -> {
             JLabel label = new JLabel(value);

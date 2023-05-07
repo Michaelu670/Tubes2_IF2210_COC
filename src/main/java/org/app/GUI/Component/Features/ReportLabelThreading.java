@@ -32,7 +32,7 @@ public class ReportLabelThreading extends JLabel implements Runnable{
     }
     public void run() {
         try{
-            thread.sleep(2000);
+            thread.sleep(10000);
             synchronized (this) {
                 while (!isRunning) {
                     wait();

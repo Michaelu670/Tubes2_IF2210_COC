@@ -88,7 +88,7 @@ public class HomePage extends JPanel {
     private ActionListener newTabReport(MainGUI mainGUI) {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                mainGUI.newTabAction(new Report()).actionPerformed(null);
+                mainGUI.newTabAction(new Report(mainGUI)).actionPerformed(null);
             }
         };
     }

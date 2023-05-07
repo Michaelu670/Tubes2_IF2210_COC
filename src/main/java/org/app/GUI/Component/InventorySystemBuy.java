@@ -89,6 +89,7 @@ public class InventorySystemBuy extends JPanel {
                 }
 
                 currentBill.user(intUserID);
+                currentBill.billId(currentCustomer.sizeOfFixedBill());
                 FixedBill fixedBill = mainGUI.dataStore.cashier().getFixedBill(intUserID, mainGUI.dataStore.inventory());
                 currentCustomer.addFixedBill(fixedBill);
 
@@ -163,10 +164,8 @@ public class InventorySystemBuy extends JPanel {
                         .addMember()
                         .addVIP()
                         .get();
-        System.out.println(customerList);
         customerList.forEach(x->{
             defaultComboBoxModel2.addElement(x.getId());
-            System.out.println(x.getId());
         });
         comboBox2 = new JComboBox();
         comboBox2.setModel(defaultComboBoxModel2);

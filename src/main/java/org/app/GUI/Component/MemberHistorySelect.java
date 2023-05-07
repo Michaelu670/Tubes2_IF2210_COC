@@ -44,16 +44,15 @@ public class MemberHistorySelect extends JPanel {
             defaultListModel1.addElement(customer.getId());
         }
 
-        lihatHistoryButton.addActionListener(lihatHistoryAction(mainGUI, list1));
+        lihatHistoryButton.addActionListener(lihatHistoryAction());
     }
 
 
-    private ActionListener lihatHistoryAction(MainGUI mainGUI, JList<Integer> list) {
+    private ActionListener lihatHistoryAction() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                int id = list.getSelectedValue();
-                System.out.println(id); // TODO
-//                mainGUI.newTabAction(new MemberHIstoryShow(id));
+                int id = list1.getSelectedValue();
+                mainGUI.newTabAction(new MemberHistoryShow(mainGUI, id)).actionPerformed(null);
             }
         };
     }
