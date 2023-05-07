@@ -44,7 +44,7 @@ public class InventorySystemMenu extends JPanel {
     private ActionListener beliBarangButtonAction(MainGUI mainGUI) {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                mainGUI.newTabAction(new InventorySystemBuy(mainGUI)).actionPerformed(null);
+                mainGUI.newTabAction(new InventorySystemBuy(mainGUI, null)).actionPerformed(null);
             }
         };
     }

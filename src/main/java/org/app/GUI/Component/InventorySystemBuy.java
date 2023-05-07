@@ -34,7 +34,7 @@ public class InventorySystemBuy extends JPanel {
     private JList<BillItem> list2;
     private MainGUI mainGUI;
     private Bill currentBill;
-    public InventorySystemBuy(MainGUI mainGUI) {
+    public InventorySystemBuy(MainGUI mainGUI, Bill bill) {
         this.mainGUI = mainGUI;
         this.setLayout(new GridLayoutManager(5, 4, new Insets(0, 0, 0, 0), -1, -1));
         checkoutButton = new JButton();
@@ -49,16 +49,25 @@ public class InventorySystemBuy extends JPanel {
         ArrayList<Item> items = (ArrayList<Item>) mainGUI.dataStore.inventory().itemList();
         refresh(items);
 
-        userDefinedConfig();
+        userDefinedConfig(bill);
     }
 
-    public void userDefinedConfig() {
+    public void userDefinedConfig(Bill bill) {
         this.setName("Inventory System Buy");
 
         defaultComboBoxModel2.addElement("None");
+        if (bill == null) {
+            currentBill = new Bill(-1,0);
+            mainGUI.dataStore.cashier().addBill(currentBill);
+        }
+        else {
+            currentBill = bill;
+            for (BillItem item: bill.itemList()) {
+                model.addElement(item);
+            }
 
-        currentBill = new Bill(-1,0);
-        mainGUI.dataStore.cashier().addBill(currentBill);
+        }
+
 
         checkoutButton.addActionListener(checkoutButtonAction());
         orderButton.addActionListener(orderButtonAction(this));

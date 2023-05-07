@@ -2,11 +2,10 @@ package org.app.GUI;
 
 import org.app.DataStore.DataStore;
 import org.app.GUI.Component.*;
+import org.app.Inventory.Holder.Bill;
 
 import javax.swing.*;
 import java.awt.event.*;
-import java.awt.*;
-import java.lang.reflect.Member;
 
 public class MainGUI extends JFrame{
     private JMenu menu;
@@ -78,7 +77,9 @@ public class MainGUI extends JFrame{
         newTabAction(new Report()).actionPerformed(null);
         newTabAction(new InventorySystemMenu(this)).actionPerformed(null);
         newTabAction(new InventorySystemSell(this)).actionPerformed(null);
-        newTabAction(new InventorySystemBuy(this)).actionPerformed(null);
+        for (Bill bill: dataStore.cashier().billList()) {
+            newTabAction(new InventorySystemBuy(this, bill)).actionPerformed(null);
+        }
     }
 
     private ActionListener newTabHome(MainGUI mainGUI) {
