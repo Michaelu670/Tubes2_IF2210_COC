@@ -43,12 +43,12 @@ public class DataStoreTest {
         for (int i = 0; i < 15; i++){
             store.customers().getCustomerList().add(new Customer(i, new ArrayList<>()));
             Random random = new Random();
-            int status = random.nextInt() % 3;
+            int status = random.nextInt(3);
             if (status == 1) {
                 store.customers().turnToMember(i,
                         "nama customer ke-" + i, "no telp");
             }
-            else {
+            else if (status == 2) {
                 store.customers().turnToVIP(i,
                         "nama customer ke-" + i, "no telp");
             }
@@ -92,9 +92,16 @@ public class DataStoreTest {
         store.save();
         JsonStoreResult.load();
 
-        Assertions.assertEquals(store.inventory(), JsonStoreResult.inventory());
-        Assertions.assertEquals(store.cashier(), JsonStoreResult.cashier());
-        Assertions.assertEquals(store.customers(), JsonStoreResult.customers());
+        assertThat(store.inventory())
+                .usingRecursiveComparison()
+                .isEqualTo(JsonStoreResult.inventory());
+        assertThat(store.cashier())
+                .usingRecursiveComparison()
+                .isEqualTo(JsonStoreResult.cashier());
+        assertThat(store.customers())
+                .usingRecursiveComparison()
+                .isEqualTo(JsonStoreResult.customers());
+
 
         // Test xml
         DataStore XmlStoreResult = new DataStore();
@@ -135,6 +142,22 @@ public class DataStoreTest {
         Setting.getInstance().setStoragePath(oldPath);
         Setting.getInstance().setDataFormat(oldDataFormat);
         store.save();
+
+        // Test inheritance
+        for (int i = 0; i < 15; i++)
+            assertThat(store.customers().getCustomerList().get(i).getClass())
+                    .isEqualTo(JsonStoreResult.customers()
+                            .getCustomerList().get(i).getClass());
+
+        for (int i = 0; i < 15; i++)
+            assertThat(store.customers().getCustomerList().get(i).getClass())
+                    .isEqualTo(XmlStoreResult.customers()
+                            .getCustomerList().get(i).getClass());
+
+        for (int i = 0; i < 15; i++)
+            assertThat(store.customers().getCustomerList().get(i).getClass())
+                    .isEqualTo(ObjStoreResult.customers()
+                            .getCustomerList().get(i).getClass());
 
         // Delete folder
         try {

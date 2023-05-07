@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import org.app.Inventory.Holder.FixedBill;
 
 @NoArgsConstructor
-class Member extends RegisteredCustomer {
+public class Member extends RegisteredCustomer {
     @Getter
     private final double poinRate = 0.01;
 

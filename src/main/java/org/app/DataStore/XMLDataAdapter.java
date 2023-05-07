@@ -22,7 +22,7 @@ public class XMLDataAdapter implements DataAdapter {
     public void saveData(String fileLocation) throws Exception{
         Serializer serializer = new Persister(new AnnotationStrategy());
         File file = new File(fileLocation);
-        serializer.write(obj, file);
+        serializer.write(obj.getData(), file);
     }
 
     @Override
