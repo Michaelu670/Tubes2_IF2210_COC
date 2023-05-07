@@ -3,6 +3,7 @@ package org.app.GUI.Component;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import org.app.Customer.Customer;
+import org.app.Customer.CustomerSelector;
 import org.app.GUI.Component.Features.GUIUtil;
 import org.app.GUI.Component.Features.InventorySystemBuyOrder;
 import org.app.GUI.MainGUI;
@@ -18,6 +19,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.List;
 
 public class InventorySystemBuy extends JPanel {
     private JList list1;
@@ -65,6 +67,16 @@ public class InventorySystemBuy extends JPanel {
         label1.setText("ID");
         this.add(label1, new GridConstraints(2, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         defaultComboBoxModel2 = new DefaultComboBoxModel();
+        List<Customer> customerList =
+                new CustomerSelector(mainGUI.dataStore.customers())
+                    .addMember()
+                    .addVIP()
+                    .get();
+        System.out.println(customerList);
+        customerList.forEach(x->{
+            defaultComboBoxModel2.addElement(x.getId());
+            System.out.println(x.getId());
+        });
         comboBox2 = new JComboBox();
         comboBox2.setModel(defaultComboBoxModel2);
         this.add(comboBox2, new GridConstraints(2, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
