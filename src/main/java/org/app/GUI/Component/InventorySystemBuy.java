@@ -83,7 +83,7 @@ public class InventorySystemBuy extends JPanel {
 
         defaultComboBoxModel2.addElement("None");
 
-        currentBill = new Bill(0,0);
+        currentBill = new Bill(-1,0);
         mainGUI.dataStore.cashier().addBill(currentBill);
         model = new DefaultListModel<>();
         BillItem emptyBill = new BillItem(
@@ -123,6 +123,7 @@ public class InventorySystemBuy extends JPanel {
                     currentCustomer = mainGUI.dataStore.customers().getCustomerFromID(intUserID);
                 }
 
+                currentBill.user(intUserID);
                 FixedBill fixedBill = mainGUI.dataStore.cashier().getFixedBill(intUserID, mainGUI.dataStore.inventory());
                 currentCustomer.addFixedBill(fixedBill);
 
