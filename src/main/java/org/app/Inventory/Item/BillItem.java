@@ -30,4 +30,11 @@ public class BillItem extends ItemDescription implements Serializable {
         this.orderType = "Dine In";
         this.notes = "";
     }
+
+    public BillItem(BillItem item){
+        super(item);
+        this.quantity = item.quantity();
+        this.orderType = new String(item.orderType());
+        this.notes = new String(item.notes());
+    }
 }
