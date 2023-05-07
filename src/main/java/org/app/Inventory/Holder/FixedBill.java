@@ -31,7 +31,11 @@ public class FixedBill implements Serializable {
     public FixedBill(@NonNull Bill bill){
         this.user = bill.user();
         this.totalPrice = bill.totalPrice();
-        this.itemList = new ArrayList<>(bill.itemList());
+        this.itemList = new ArrayList<>();
+        for (BillItem item : bill.itemList()) {
+            BillItem copyItem = new BillItem(item);
+            this.itemList.add(copyItem);
+        }
     }
 
 }
