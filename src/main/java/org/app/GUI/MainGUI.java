@@ -46,7 +46,7 @@ public class MainGUI extends JFrame{
         closeTabMenu.addActionListener(closeTab());
         newTabWithMenu.addActionListener(newTabHome(this));
         closeTabWithMenu.addActionListener(closeTab());
-        settingMenu.addActionListener(newTabSetting());
+        settingMenu.addActionListener(newTabSetting(this));
     }
 
     private void initComponent() {
@@ -68,7 +68,7 @@ public class MainGUI extends JFrame{
         newTabAction(new HomePage(this)).actionPerformed(null);
         newTabAction(new MemberMenu(this)).actionPerformed(null);
         newTabAction(new MemberRegistration(this)).actionPerformed(null);
-        newTabAction(new SettingGUI()).actionPerformed(null);
+        newTabAction(new SettingGUI(this)).actionPerformed(null);
         newTabAction(new MemberHistorySelect(this)).actionPerformed(null);
     }
 
@@ -80,10 +80,10 @@ public class MainGUI extends JFrame{
         };
     }
 
-    private ActionListener newTabSetting() {
+    private ActionListener newTabSetting(MainGUI mainGUI) {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                newTabAction(new SettingGUI()).actionPerformed(null);
+                newTabAction(new SettingGUI(mainGUI)).actionPerformed(null);
             }
         };
     }

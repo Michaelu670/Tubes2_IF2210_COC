@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 
+import org.app.GUI.MainGUI;
+
 
 public class PluginLoader {
     // Get all class name from .jar file
@@ -35,7 +37,7 @@ public class PluginLoader {
         return classNames;
     }
 
-    public static void load(String filePath) {
+    public static void load(String filePath, MainGUI mainGUI) {
         try {
             ArrayList<String> classNames = getAllClassNames(filePath);
 
@@ -57,7 +59,7 @@ public class PluginLoader {
                 Class<?> clazz = classLoader.loadClass("org.app.Plugin." + file.getName().replace(".jar", ""));
                 Plugin plugin = (Plugin) clazz.newInstance();
 
-                plugin.onEnable();
+                plugin.onEnable(mainGUI);
             }
         } catch (Exception e) {
             e.printStackTrace();
