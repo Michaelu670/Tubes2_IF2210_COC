@@ -43,7 +43,7 @@ public abstract class AbstractReport implements ReportWriter {
     }
 
     protected static void addBill(Document document, int idx) throws DocumentException {
-        String customerNumber = "Bill Customer " + String.valueOf(idx + 1);
+        String customerNumber = "Bill Customer " + String.valueOf(listOfReport.get(idx).user()) + " - " + String.valueOf(listOfReport.get(idx).billId());
         Anchor anchor = new Anchor(customerNumber, titleFont);
         anchor.setName(customerNumber);
 
@@ -59,6 +59,12 @@ public abstract class AbstractReport implements ReportWriter {
             createList(subCatPart ,idx, j);
             currentChapter.add(paragraph);
         }
+        endReport(currentChapter,idx);
+
+        document.add(currentChapter);
+    }
+
+    private static void endReport(Chapter currentChapter,int idx){
         Paragraph endParagraph = new Paragraph();
         addEmptyLine(endParagraph, 1);
 
@@ -66,12 +72,12 @@ public abstract class AbstractReport implements ReportWriter {
                 "Total Price : " + listOfReport.get(idx).totalPrice(),
                 normalBold));
         currentChapter.add(endParagraph);
-
-        document.add(currentChapter);
     }
+
     protected static void createList(Section section, int idx, int j) {
         com.itextpdf.text.List list = new com.itextpdf.text.List(true, false, 10);
         list.add(new ListItem("Item Name : " + getBillItem(idx).get(j).itemName()));
+        list.add(new ListItem("Price: " + getBillItem(idx).get(j).sellingPrice()));
         list.add(new ListItem("Quantity : " + getBillItem(idx).get(j).quantity()));
         list.add(new ListItem("Order types : " + getBillItem(idx).get(j).orderType()));
         list.add(new ListItem("Notes : " + getBillItem(idx).get(j).notes()));
