@@ -18,6 +18,7 @@ public class PluginChart1 extends BasePlugin implements Plugin, Runnable {
 
     @Override
     public void run() {
+        mainGUI.newTabAction(panel).actionPerformed(null);
         while (true) {
             try {
                 // Panel initialization
@@ -50,16 +51,12 @@ public class PluginChart1 extends BasePlugin implements Plugin, Runnable {
                 panel.add(lineChartPanel);
                 panel.add(barChartPanel);
 
-                // Add to mainGUI tab
-                mainGUI.newTabAction(panel).actionPerformed(null);
-
                 // Sleep 10s
                 Thread.sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-
     }
 
     public static void main(String[] args) {
@@ -71,5 +68,4 @@ public class PluginChart1 extends BasePlugin implements Plugin, Runnable {
         PluginChart1 pluginChart1 = new PluginChart1();
         pluginChart1.onEnable(mainGUI, mainGUI.dataStore);
     }
-
 }
