@@ -59,7 +59,7 @@ public class PluginLoader {
                 Class<?> clazz = classLoader.loadClass("org.app.Plugin." + file.getName().replace(".jar", ""));
                 Plugin plugin = (Plugin) clazz.newInstance();
 
-                plugin.onEnable(mainGUI);
+                plugin.onEnable(mainGUI, mainGUI.dataStore);
             }
         } catch (Exception e) {
             e.printStackTrace();
