@@ -3,10 +3,13 @@ package org.app.Customer;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.app.DataStore.DataHolder;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Root;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +18,10 @@ import java.util.stream.Collectors;
 @Getter @Setter
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
+@Root
+@EqualsAndHashCode
 public class Customers extends DataHolder {
+    @ElementList
     private List<Customer> customerList;
     public Customers() {
         customerList = new ArrayList<>();

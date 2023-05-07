@@ -9,17 +9,24 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.app.DataStore.DataHolder;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Root;
 
 @Getter
 @Setter
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
+@Root
 @ToString
 public class Setting extends DataHolder {
     // Atributes
     private static Setting instance;
+    @Element
     private String storagePath;
+    @Element
     private String dataFormat;
+    @ElementList
     private ArrayList<String> pluginPaths;
 
     // Constructor

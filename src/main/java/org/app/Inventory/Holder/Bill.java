@@ -6,16 +6,22 @@ import lombok.experimental.SuperBuilder;
 import org.app.Inventory.Item.*;
 import org.app.Inventory.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @SuperBuilder
-@RequiredArgsConstructor
+@EqualsAndHashCode
+@NoArgsConstructor
 @Accessors(fluent = true)
-public class Bill implements PurchaseDescription, ItemHolder {
+public class Bill implements PurchaseDescription, ItemHolder, Serializable {
 
-    private final int user;  // change to Member instance
+    private int user;  // change to Member instance
+
+    public Bill(int user) {
+        this.user = user;
+    }
 
     @Builder.Default
     private List<BillItem> itemList = new ArrayList<>();

@@ -8,6 +8,8 @@ import lombok.experimental.Accessors;
 import org.app.DataStore.DataHolder;
 import org.app.Inventory.Item.*;
 import org.app.Inventory.*;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Root;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +19,12 @@ import java.util.List;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @ToString
+@EqualsAndHashCode
+@Root
 public class Inventory extends DataHolder implements ItemHolder {
 
     @Getter @Accessors(fluent = true)
+    @ElementList
     private List<Item> itemList = new ArrayList<>();
 
     @Override
