@@ -88,10 +88,15 @@ public class InventorySystemSell extends JPanel {
     private ActionListener deleteButtonAction() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                mainGUI.dataStore.inventory().removeItem(
-                mainGUI.dataStore.inventory().getItem(listSelectedIndex));
-                listSelectedIndex = -1;
-                refresh();
+                if (listSelectedIndex != -1) {
+                    mainGUI.dataStore.inventory().removeItem(
+                    mainGUI.dataStore.inventory().getItem(listSelectedIndex));
+                    listSelectedIndex = -1;
+                    for(int i=0;i<5;i++){
+                        itemDescriptions[i] = new JLabel();
+                    }
+                    refresh();
+                }
             }
         };
     }
@@ -118,6 +123,7 @@ public class InventorySystemSell extends JPanel {
     private ActionListener tambahButtonAction() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                listSelectedIndex = -1;
                 isAdding = true;
                 toggleEditing();
             }
@@ -127,6 +133,7 @@ public class InventorySystemSell extends JPanel {
     private ActionListener cancelButtonAction() {
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                listSelectedIndex = -1;
                 toggleEditing();
                 isAdding = false;
             }
@@ -158,6 +165,7 @@ public class InventorySystemSell extends JPanel {
                         item.purchasePrice(Double.valueOf(((JTextField) itemDescriptions[3]).getText()))
                             .stock(Integer.valueOf(((JTextField) itemDescriptions[4]).getText()));
                     }
+                    listSelectedIndex = -1;
                     toggleEditing();
                 }catch(Exception e) {
                     System.out.println("Input cannot be empty");
@@ -169,13 +177,23 @@ public class InventorySystemSell extends JPanel {
     private void toggleEditing() {
         isEditing = !isEditing;
         if(isEditing) {
-            itemDescriptions[0] = new JTextField(((JLabel)itemDescriptions[0]).getText());
-            itemDescriptions[1] = new JTextField(((JLabel)itemDescriptions[1]).getText());
-            itemDescriptions[2] = new JTextField(0);
+            if(isAdding) {
+                itemDescriptions[0] = new JTextField();
+                itemDescriptions[1] = new JTextField();
+                itemDescriptions[2] = new JTextField(0);
+                itemDescriptions[3] = new JTextField(0);
+                itemDescriptions[4] = new JTextField(0);
+            }else {
+                itemDescriptions[0] = new JTextField(((JLabel)itemDescriptions[0]).getText());
+                itemDescriptions[1] = new JTextField(((JLabel)itemDescriptions[1]).getText());
+                itemDescriptions[2] = new JTextField(String.valueOf((int) Double.parseDouble(((JLabel)itemDescriptions[2]).getText())));
+                itemDescriptions[3] = new JTextField(String.valueOf((int) Double.parseDouble(((JLabel)itemDescriptions[3]).getText())));
+                itemDescriptions[4] = new JTextField(((JLabel)itemDescriptions[4]).getText());
+                inputImagePath = mainGUI.dataStore.inventory().getItem(listSelectedIndex).imagePath();
+            }
+            itemDescriptions[5] = inputImageButton;
             itemDescriptions[2].addKeyListener(GUIUtil.numericTextFieldListener());
-            itemDescriptions[3] = new JTextField(0);
             itemDescriptions[3].addKeyListener(GUIUtil.numericTextFieldListener());
-            itemDescriptions[4] = new JTextField(0);
             itemDescriptions[4].addKeyListener(GUIUtil.numericTextFieldListener());
         }else {
             itemDescriptions[0] = new JLabel();
@@ -195,6 +213,8 @@ public class InventorySystemSell extends JPanel {
             public void actionPerformed(ActionEvent e){
                 JFileChooser dialog = new JFileChooser();
                 dialog.setCurrentDirectory(new File(System.getProperty("user.dir")));
+                dialog.addChoosableFileFilter(new GUIUtil.ImageFilter());
+                dialog.setAcceptAllFileFilterUsed(false);
 
                 int choice = dialog.showSaveDialog(null);
                 if (choice == JFileChooser.APPROVE_OPTION) {
@@ -249,16 +269,14 @@ public class InventorySystemSell extends JPanel {
         scrollPane1.setViewportView(list1);
         list1.addListSelectionListener(listAction());
 
-        for(int i=0;i<5;i++){
+        for(int i=0;i<6;i++){
             this.add(itemDescriptions[i], new GridConstraints(i+1, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         }
 
         if(isEditing){
-            this.add(inputImageButton, new GridConstraints(6, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
             this.add(cancelButton, new GridConstraints(7, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
             this.add(saveButton, new GridConstraints(7, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         }else{
-            this.add(itemDescriptions[5], new GridConstraints(6, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
             this.add(editButton, new GridConstraints(7, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
             this.add(deleteButton, new GridConstraints(7, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         }

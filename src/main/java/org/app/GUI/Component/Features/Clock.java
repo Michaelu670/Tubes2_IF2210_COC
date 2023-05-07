@@ -1,7 +1,6 @@
 package org.app.GUI.Component.Features;
 
 import javax.swing.*;
-import java.awt.*;
 import java.text.*;
 import java.util.*;
 public class Clock extends JLabel implements Runnable{

@@ -3,7 +3,6 @@ package org.app.GUI.Component.Features;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
-import org.app.GUI.Component.Features.GUIUtil;
 import org.app.GUI.Component.InventorySystemBuy;
 import org.app.GUI.MainGUI;
 import org.app.Inventory.Item.BillItem;
@@ -18,7 +17,7 @@ public class InventorySystemBuyOrder extends JPanel{
     private JTextField numfieldTextField;
     private JLabel label1;
     private JButton button1;
-    private JComboBox comboBox1;
+    private JComboBox<String> comboBox1;
     private JLabel label3;
     private JButton button2;
     private JTextArea textArea1;
@@ -53,8 +52,8 @@ public class InventorySystemBuyOrder extends JPanel{
         button2 = new JButton();
         button2.setText("+");
         this.add(button2, new GridConstraints(2, 4, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        comboBox1 = new JComboBox();
-        final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
+        comboBox1 = new JComboBox<>();
+        final DefaultComboBoxModel<String> defaultComboBoxModel1 = new DefaultComboBoxModel<>();
         defaultComboBoxModel1.addElement("Dine-in");
         defaultComboBoxModel1.addElement("Go-Food");
         defaultComboBoxModel1.addElement("Grab-Food");
@@ -80,7 +79,6 @@ public class InventorySystemBuyOrder extends JPanel{
     private void userDefinedConfig() {
         this.setName("Inventory System Buy Order");
 
-        String text = new String();
         label1.setText(item.itemName() + " - " + item.sellingPrice());
         numfieldTextField.setText("1");
 

@@ -3,14 +3,10 @@ package org.app.GUI.Component;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
-import org.apache.maven.plugin.AbstractMojoExecutionException;
 import org.app.Customer.Customer;
 import org.app.GUI.Component.Features.ReportLabelThreading;
 import org.app.GUI.MainGUI;
-import org.app.Inventory.Holder.Bill;
 import org.app.Inventory.Holder.FixedBill;
-import org.app.Inventory.Item.BillItem;
-import org.app.Inventory.Item.Item;
 import org.app.Report.AbstractReport;
 import org.app.Report.SalesReport;
 import org.app.Report.FixedBillReport;
@@ -19,17 +15,15 @@ import org.app.Report.FixedBillReport;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Report extends JPanel {
     private JButton cetakPenjualanButton;
-    private JComboBox comboBox1;
-    private DefaultComboBoxModel defaultComboBoxModel1;
+    private JComboBox<Integer> comboBox1;
+    private DefaultComboBoxModel<Integer> defaultComboBoxModel1;
     private JButton cetakTransaksiButton;
-    private JComboBox comboBox2;
-    private DefaultComboBoxModel defaultComboBoxModel2;
+    private JComboBox<Integer> comboBox2;
+    private DefaultComboBoxModel<Integer> defaultComboBoxModel2;
     private ReportLabelThreading sedangMencetakTextField;
     private MainGUI mainGUI;
     public Report(MainGUI mainGUI) {
@@ -43,8 +37,8 @@ public class Report extends JPanel {
         this.add(label2, new GridConstraints(0, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final Spacer spacer1 = new Spacer();
         this.add(spacer1, new GridConstraints(0, 2, 4, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(11, 159), null, 0, false));
-        comboBox2 = new JComboBox();
-        defaultComboBoxModel2 = new DefaultComboBoxModel();
+        comboBox2 = new JComboBox<>();
+        defaultComboBoxModel2 = new DefaultComboBoxModel<>();
         comboBox2.setModel(defaultComboBoxModel2);
         this.add(comboBox2, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(122, 32), null, 0, false));
         cetakTransaksiButton = new JButton();
@@ -59,8 +53,8 @@ public class Report extends JPanel {
         final JLabel label4 = new JLabel();
         label4.setText("ID Customer");
         this.add(label4, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(66, 65), null, 0, false));
-        comboBox1 = new JComboBox();
-        defaultComboBoxModel1 = new DefaultComboBoxModel();
+        comboBox1 = new JComboBox<>();
+        defaultComboBoxModel1 = new DefaultComboBoxModel<>();
         comboBox1.setModel(defaultComboBoxModel1);
         this.add(comboBox1, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(122, 32), null, 0, false));
         sedangMencetakTextField = new ReportLabelThreading(this);
@@ -108,7 +102,6 @@ public class Report extends JPanel {
                 for (Customer customer : allCustomer) {
                     listOfReport.addAll(customer.getBills());
                 }
-                SalesReport salesReport = new SalesReport();
                 AbstractReport.listOfReport(listOfReport);
                 sedangMencetakTextField.writeReport(new SalesReport());
             }

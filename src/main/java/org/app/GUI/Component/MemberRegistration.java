@@ -10,7 +10,6 @@ import org.app.GUI.MainGUI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
 
 public class MemberRegistration extends JPanel{     
     private DefaultComboBoxModel<Integer> defaultComboBoxModel1;

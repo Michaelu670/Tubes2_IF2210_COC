@@ -40,8 +40,8 @@ public class InventorySystemBuy extends JPanel {
         checkoutButton = new JButton();
         orderButton = new JButton();
         textField1 = new JTextField();
-        comboBox1 = new JComboBox();
-        final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
+        comboBox1 = new JComboBox<>();
+        final DefaultComboBoxModel<String> defaultComboBoxModel1 = new DefaultComboBoxModel<>();
         defaultComboBoxModel1.addElement("Name");
         defaultComboBoxModel1.addElement("Category");
         defaultComboBoxModel1.addElement("Price");
@@ -158,7 +158,7 @@ public class InventorySystemBuy extends JPanel {
         final JLabel label1 = new JLabel();
         label1.setText("ID");
         this.add(label1, new GridConstraints(2, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        defaultComboBoxModel2 = new DefaultComboBoxModel();
+        defaultComboBoxModel2 = new DefaultComboBoxModel<>();
         List<Customer> customerList =
                 new CustomerSelector(mainGUI.dataStore.customers())
                         .addMember()
@@ -167,7 +167,7 @@ public class InventorySystemBuy extends JPanel {
         customerList.forEach(x->{
             defaultComboBoxModel2.addElement(x.getId());
         });
-        comboBox2 = new JComboBox();
+        comboBox2 = new JComboBox<>();
         comboBox2.setModel(defaultComboBoxModel2);
         this.add(comboBox2, new GridConstraints(2, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         checkoutButton.setText("Checkout");

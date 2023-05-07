@@ -1,6 +1,5 @@
 package org.app.GUI.Component;
 
-import org.app.Customer.Customer;
 import org.app.Customer.CustomerSelector;
 import org.app.Customer.Member;
 import org.app.Customer.VIP;
@@ -10,7 +9,6 @@ import org.app.GUI.MainGUI;
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class MemberList extends JPanel {
