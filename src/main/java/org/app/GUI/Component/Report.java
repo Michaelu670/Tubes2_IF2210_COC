@@ -13,6 +13,8 @@ import org.app.Inventory.Item.BillItem;
 import org.app.Inventory.Item.Item;
 import org.app.Report.AbstractReport;
 import org.app.Report.SalesReport;
+import org.app.Report.FixedBillReport;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -85,11 +87,14 @@ public class Report extends JPanel {
                 String id = comboBox1.getSelectedItem().toString();
                 int intUserId = Integer.parseInt(id);
                 String billid = comboBox2.getSelectedItem().toString();
-                int intBillId = Integer.parseInt(id);
+                int intBillId = Integer.parseInt(billid);
 
-
-                // TODO
-//                sedangMencetakTextField.writeReport(new FixedBillReport());
+                Customer selectedCustomer = mainGUI.dataStore.customers().getCustomerFromID(intUserId);
+                FixedBill selectedBill = selectedCustomer.getBills().stream().filter(x -> x.billId() == intBillId).findFirst().get();
+                ArrayList<FixedBill> selectedBills = new ArrayList<>();
+                selectedBills.add(selectedBill);
+                AbstractReport.listOfReport(selectedBills);
+                sedangMencetakTextField.writeReport(new FixedBillReport(0));
             }
         };
     }
