@@ -9,6 +9,7 @@ import org.app.Inventory.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @SuperBuilder
@@ -52,8 +53,11 @@ public class Bill implements PurchaseDescription, ItemHolder, Serializable {
     @Override
     public double totalPrice() {
         return itemList.stream()
-                .mapToDouble(BillItem::sellingPrice)
+                .mapToDouble(item -> item.sellingPrice() * item.quantity())                
                 .sum();
     }
 
+    public @NonNull FixedBill confirm(){
+        return new FixedBill(this);
+    }
 }

@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.app.DataStore.DataHolder;
 import org.app.Inventory.Holder.Bill;
+import org.app.Inventory.Holder.FixedBill;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,5 +39,12 @@ public class Cashier extends DataHolder implements BillHolder {
             }
         }
         return null;
+    }
+
+    public FixedBill getFixedBill(int user){
+        Bill bill = getBill(user);
+        FixedBill fixedBill = bill.confirm();
+        removeBill(bill);
+        return fixedBill;
     }
 }

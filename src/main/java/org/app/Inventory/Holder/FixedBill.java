@@ -28,7 +28,7 @@ public class FixedBill implements Serializable {
     @ElementList
     @NotNull private List<BillItem> itemList;
 
-    public FixedBill(Bill bill){
+    public FixedBill(@NonNull Bill bill){
         this.user = bill.user();
         this.totalPrice = bill.totalPrice();
         this.itemList = new ArrayList<>(bill.itemList());

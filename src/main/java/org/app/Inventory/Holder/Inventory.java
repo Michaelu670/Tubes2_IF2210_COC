@@ -81,4 +81,24 @@ public class Inventory extends DataHolder implements ItemHolder {
         }
         return items;
     }
+
+    public List<Item> searchItemPrice(double price){
+        List<Item> items = new ArrayList<>();
+        for(Item item : itemList){
+            if(item.sellingPrice() == price){
+                items.add(item);
+            }
+        }
+        return items;
+    }
+
+    public List<Item> searchItemPriceRange(double min, double max){
+        List<Item> items = new ArrayList<>();
+        for(Item item : itemList){
+            if(item.sellingPrice() >= min && item.sellingPrice() <= max){
+                items.add(item);
+            }
+        }
+        return items;
+    }
 }
