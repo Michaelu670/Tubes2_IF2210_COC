@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Accessors(fluent = true)
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Cashier extends DataHolder implements BillHolder {

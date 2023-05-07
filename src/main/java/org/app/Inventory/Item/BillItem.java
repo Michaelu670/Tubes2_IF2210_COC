@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 @Data
 @SuperBuilder
-@NoArgsConstructor
+@NoArgsConstructor(force = true)
 @EqualsAndHashCode(callSuper = true)
 @Accessors(fluent = true)
 @Root

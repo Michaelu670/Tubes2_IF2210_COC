@@ -7,8 +7,6 @@ import lombok.experimental.SuperBuilder;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
-import java.io.Serializable;
-
 @Data
 @SuperBuilder
 @EqualsAndHashCode(callSuper = true)
@@ -18,8 +16,9 @@ import java.io.Serializable;
 public class Item extends ItemDescription {
     // type field can be change
     @Element
-    @NotNull private int stock;
+    @Builder.Default
+    @NotNull private int stock = 0;
     @Element
-    @NotNull private double purchasePrice;       // harga beli barang
-
+    @Builder.Default
+    @NotNull private double purchasePrice = 0;       // harga beli barang
 }

@@ -134,11 +134,13 @@ public class HolderTest {
     void fixedBillTest(){
 
         // Item List Check
-        BillItem billItem = BillItem.builder()
-                .itemName("")
-                .category("")
-                .imagePath("")
-                .build();
+        BillItem billItem = new BillItem(
+                Item.builder()
+                        .itemName("test")
+                        .sellingPrice(10)
+                        .category("cat")
+                        .build()
+        );
 
         Bill bill = new Bill(1);
         bill.addItem(billItem);

@@ -3,8 +3,6 @@ package org.app.Inventory.Item;
 import lombok.*;
 import lombok.experimental.Accessors;
 import lombok.experimental.SuperBuilder;
-import org.simpleframework.xml.Default;
-import org.simpleframework.xml.DefaultType;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
@@ -12,7 +10,7 @@ import java.io.Serializable;
 
 @SuperBuilder
 @Getter @Setter
-@NoArgsConstructor
+@NoArgsConstructor(force = true)
 @Accessors(fluent = true)
 @EqualsAndHashCode
 @Root
@@ -26,7 +24,8 @@ public abstract class ItemDescription implements Serializable {
     @Element
     @NonNull private String category;
     @Element
-    @NonNull private String imagePath;
+    @Builder.Default
+    @NonNull private String imagePath = "";
 
     protected ItemDescription(Item item){
         this.itemName = item.itemName();

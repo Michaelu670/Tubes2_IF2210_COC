@@ -19,13 +19,12 @@ import java.util.UUID;
 public class Bill implements PurchaseDescription, ItemHolder, Serializable {
 
     private int user;  // change to Member instance
-
-    public Bill(int user) {
-        this.user = user;
-    }
-
     @Builder.Default
     private List<BillItem> itemList = new ArrayList<>();
+    public Bill(int user) {
+        this.user = user;
+        this.itemList = new ArrayList<>();
+    }
     @Override
     public <T extends ItemDescription> void addItem(T item) {
         itemList.add((BillItem) item);
@@ -60,4 +59,22 @@ public class Bill implements PurchaseDescription, ItemHolder, Serializable {
     public @NonNull FixedBill confirm(){
         return new FixedBill(this);
     }
+
+    private boolean checkItemNotNull(){
+        for(BillItem item : itemList){
+            if(item == null){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // private boolean checkStock(List<Item> stockList){
+    //     for(BillItem item : itemList){
+    //         if(item.quantity() > stockList.get(stockList.indexOf((Item) item)).stock()){
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
 }
