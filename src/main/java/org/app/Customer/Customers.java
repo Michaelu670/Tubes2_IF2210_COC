@@ -36,8 +36,9 @@ public class Customers {
         return customer;
     }
     public List<Customer> getNotRegisteredCustomers() {
-        return customerList.stream().filter(x -> x.getClass()
-                .equals(Customer.class)).collect(Collectors.toList());
+        return new CustomerSelector(this)
+                .addCustomer()
+                .get();
     }
     public Customer getCustomerFromID(int id) {
         return customerList.stream()
