@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 @Accessors(fluent = true)
 @ToString
-public class DataStore {
+public class DataStore implements DataStoreInterface{
     @NotNull private XMLDataAdapter settings;
     @NotNull private static final String settingFileLocation = "setting.xml";
 
