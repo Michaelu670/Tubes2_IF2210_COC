@@ -18,7 +18,7 @@ public class HolderTest {
         assertNotNull(newInventory.itemList());
 
         // Bill Class
-        Bill newBill = new Bill(1);
+        Bill newBill = new Bill(1 , 0);
         assertNotNull(newBill.itemList());
 
         // Fixed Bill Class
@@ -39,7 +39,7 @@ public class HolderTest {
 
     @Test
     void kasirTest(){
-        Bill newBill = new Bill(1);
+        Bill newBill = new Bill(1, 0);
 
 
         // Kasir Class
@@ -145,7 +145,7 @@ public class HolderTest {
         BillItem billItem = new BillItem(item);
 
         // Bill Class
-        Bill newBill = new Bill(1);
+        Bill newBill = new Bill(1, 1);
         newBill.addItem(billItem);
         assertEquals(newBill.itemList().size(), 1);
         assert(newBill.itemList().contains(billItem));
@@ -169,7 +169,7 @@ public class HolderTest {
                         .build()
         );
 
-        Bill bill = new Bill(1);
+        Bill bill = new Bill(1, 0);
         bill.addItem(billItem);
 
         FixedBill fixedBill = new FixedBill(bill);
@@ -208,7 +208,7 @@ public class HolderTest {
         // Bill Test
         BillItem billItem = new BillItem(item);
 
-        Bill bill = new Bill(1);
+        Bill bill = new Bill(1, 0);
         bill.addItem(billItem);
 
         BillItem editBill = bill.getItem(0);

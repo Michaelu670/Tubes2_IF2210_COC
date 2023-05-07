@@ -23,6 +23,7 @@ import org.simpleframework.xml.Root;
 public class FixedBill implements Serializable {
     @Element
     private int user;  // change to Member instance
+    private int billId;
     @Element
     private double totalPrice;
     @ElementList
@@ -30,6 +31,7 @@ public class FixedBill implements Serializable {
 
     public FixedBill(@NonNull Bill bill){
         this.user = bill.user();
+        this.billId = bill.billId();
         this.totalPrice = bill.totalPrice();
         this.itemList = new ArrayList<>();
         for (BillItem item : bill.itemList()) {
