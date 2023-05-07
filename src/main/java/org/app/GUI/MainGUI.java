@@ -66,10 +66,18 @@ public class MainGUI extends JFrame{
         setActionListener();
 
         newTabAction(new HomePage(this)).actionPerformed(null);
+        makeFinishedPanel();
+    }
+
+    private void makeFinishedPanel() {
+        // TODO : just for testing purpose, delete later
         newTabAction(new MemberMenu(this)).actionPerformed(null);
         newTabAction(new MemberRegistration(this)).actionPerformed(null);
         newTabAction(new SettingGUI(this)).actionPerformed(null);
         newTabAction(new MemberHistorySelect(this)).actionPerformed(null);
+        newTabAction(new Report()).actionPerformed(null);
+        newTabAction(new InventorySystemMenu(this)).actionPerformed(null);
+        newTabAction(new InventorySystemSell()).actionPerformed(null);
     }
 
     private ActionListener newTabHome(MainGUI mainGUI) {

@@ -40,7 +40,7 @@ public class MemberHistorySelect extends JPanel {
         scrollBar1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         this.setName("Member History Select");
 
-        for(Customer customer : mainGUI.dataStore.customers().getNotRegisteredCustomers()) {
+        for(Customer customer : mainGUI.dataStore.customers().getCustomerList()) {
             defaultListModel1.addElement(customer.getId());
         }
 

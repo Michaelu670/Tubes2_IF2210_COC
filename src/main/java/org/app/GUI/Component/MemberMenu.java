@@ -33,8 +33,8 @@ public class MemberMenu extends JPanel {
 
     private void userDefinedConfig() {
         this.setName("Member Menu");
-        registrationButton.addActionListener(newTabMemberRegistration(mainGUI));
-        historyButton.addActionListener(newTabMemberHistory(mainGUI));
+        registrationButton.addActionListener(mainGUI.newTabAction(new MemberRegistration(mainGUI))); // TODO : harusnya pake actionlistner dibawah tapi error
+        historyButton.addActionListener(mainGUI.newTabAction(new MemberHistorySelect(mainGUI))); // TODO : harusnya pake actionlistner dibawah tapi error
     }
 
 
