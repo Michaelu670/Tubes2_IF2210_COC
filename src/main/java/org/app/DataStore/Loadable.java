@@ -10,4 +10,5 @@ public interface Loadable extends Serializable {
      */
 
     void setData(Loadable data) throws Exception;
+    Loadable getData();
 }

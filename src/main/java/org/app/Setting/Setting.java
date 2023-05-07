@@ -2,9 +2,6 @@ package org.app.Setting;
 
 import java.util.ArrayList;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -17,8 +14,6 @@ import org.simpleframework.xml.Root;
 
 @Getter
 @Setter
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
 @Root
 @ToString
 public class Setting extends DataHolder {

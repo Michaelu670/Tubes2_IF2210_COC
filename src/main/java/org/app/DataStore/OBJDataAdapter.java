@@ -13,7 +13,7 @@ public class OBJDataAdapter implements DataAdapter{
     @Override
     public void saveData(String fileLocation) throws Exception {
         ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(fileLocation));
-        outputStream.writeObject(obj);
+        outputStream.writeObject(obj.getData());
         outputStream.flush();
         outputStream.close();
     }

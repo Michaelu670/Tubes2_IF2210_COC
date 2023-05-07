@@ -1,8 +1,5 @@
 package org.app.Inventory;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,8 +15,6 @@ import java.util.List;
 @Getter
 @Accessors(fluent = true)
 @EqualsAndHashCode(callSuper = false)
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
 public class Cashier extends DataHolder implements BillHolder {
     private List<Bill> billList = new ArrayList<>();
     @Override

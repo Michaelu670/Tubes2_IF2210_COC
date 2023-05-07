@@ -3,6 +3,7 @@ package org.app.DataStore;
 import com.sun.istack.NotNull;
 import lombok.*;
 import lombok.experimental.Accessors;
+import org.app.Customer.Customer;
 import org.app.Customer.Customers;
 import org.app.Inventory.Cashier;
 import org.app.Inventory.Holder.Inventory;
@@ -11,6 +12,10 @@ import org.app.Setting.Setting;
 import java.io.FileNotFoundException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 @Accessors(fluent = true)
 @ToString
@@ -29,7 +34,7 @@ public class DataStore {
         dataformat = "json";
         inventorySaver = new JSONDataAdapter(new Inventory());
         cashierSaver = new JSONDataAdapter(new Cashier());
-        customersSaver = new JSONDataAdapter(new Customers());
+        customersSaver = new JSONDataAdapter(new CustomerTypeAdapter(new Customers()));
     }
 
     public void save() {
@@ -65,6 +70,7 @@ public class DataStore {
             inventorySaver.loadData(fileLocation("inventory"));
             cashierSaver.loadData(fileLocation("cashier"));
             customersSaver.loadData(fileLocation("customers"));
+
         }
         catch (FileNotFoundException e) {
             // use default file
@@ -81,7 +87,7 @@ public class DataStore {
         return (Cashier) cashierSaver.getObj();
     }
     public Customers customers() {
-        return (Customers) customersSaver.getObj();
+        return ((CustomerTypeAdapter) customersSaver.getObj()).getAdaptee();
     }
 
 

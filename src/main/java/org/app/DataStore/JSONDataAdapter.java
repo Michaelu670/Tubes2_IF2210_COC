@@ -17,7 +17,7 @@ public class JSONDataAdapter implements DataAdapter {
     public void saveData(String fileLocation) throws Exception {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         FileWriter fw = new FileWriter(fileLocation);
-        gson.toJson(obj, fw);
+        gson.toJson(obj.getData(), fw);
         fw.flush();
         fw.close();
     }

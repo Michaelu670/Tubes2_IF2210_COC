@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 
 @Root
 @NoArgsConstructor
-class VIP extends Member {
+public class VIP extends Member {
     @Getter
     private final double diskon = 0.1;
 
