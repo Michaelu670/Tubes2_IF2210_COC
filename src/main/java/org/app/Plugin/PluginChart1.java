@@ -1,7 +1,5 @@
 package org.app.Plugin;
 
-import org.app.DataStore.DataSaver;
-import org.app.DataStore.DataStore;
 import org.app.DataStore.DataStoreInterface;
 import org.app.GUI.MainGUI;
 import org.jfree.chart.ChartFactory;
@@ -28,8 +26,8 @@ public class PluginChart1 extends BasePlugin implements Plugin, Runnable {
                 // Create Line Chart
                 JFreeChart lineChart = ChartFactory.createLineChart(
                         "Line Chart",
-                        "Item", "Number of Item Sold",
-                        createCategoryDataset(dataStore.inventory()),
+                        "Item", "Number of Item Stock",
+                        createCategoryDataset(),
                         org.jfree.chart.plot.PlotOrientation.VERTICAL,
                         true, true, false);
 
@@ -39,8 +37,8 @@ public class PluginChart1 extends BasePlugin implements Plugin, Runnable {
                 // Create Bar Chart
                 JFreeChart barChart = ChartFactory.createBarChart(
                         "Bar Chart",
-                        "Item", "Number of Item Sold",
-                        createCategoryDataset(dataStore.inventory()),
+                        "Item", "Number of Item Stock",
+                        createCategoryDataset(),
                         org.jfree.chart.plot.PlotOrientation.VERTICAL,
                         true, true, false);
 
@@ -57,15 +55,5 @@ public class PluginChart1 extends BasePlugin implements Plugin, Runnable {
                 e.printStackTrace();
             }
         }
-    }
-
-    public static void main(String[] args) {
-        DataStore dataStore = new DataStore();
-        dataStore.load();
-        DataSaver.init(dataStore);
-
-        MainGUI mainGUI = new MainGUI(dataStore);
-        PluginChart1 pluginChart1 = new PluginChart1();
-        pluginChart1.onEnable(mainGUI, mainGUI.dataStore);
     }
 }
