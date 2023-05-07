@@ -16,7 +16,7 @@ public class FixedBill{
     private final double totalPrice;
     private final List<BillItem> itemList;
 
-    public FixedBill(Bill bill){
+    public FixedBill(@NonNull Bill bill){
         this.user = bill.user();
         this.totalPrice = bill.totalPrice();
         this.itemList = new ArrayList<>(bill.itemList());

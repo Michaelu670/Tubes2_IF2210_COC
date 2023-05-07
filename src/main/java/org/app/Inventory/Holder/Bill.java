@@ -50,4 +50,7 @@ public class Bill implements PurchaseDescription, ItemHolder {
                 .sum();
     }
 
+    public @NonNull FixedBill confirm(){
+        return new FixedBill(this);
+    }
 }

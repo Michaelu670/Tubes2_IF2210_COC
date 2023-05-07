@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.sql.Array;
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class HolderTest {
@@ -42,6 +41,7 @@ public class HolderTest {
     void kasirTest(){
         Bill newBill = new Bill(1);
 
+
         // Kasir Class
         Cashier newCashier = new Cashier();
         newCashier.addBill(newBill);
@@ -50,7 +50,23 @@ public class HolderTest {
         assert(newCashier.billList().contains(newBill));
         newCashier.removeBill(newBill);
         assertEquals(newCashier.billList().size(), 1);
-        }
+
+        Item item = Item.builder()
+        .itemName("First Item")
+        .sellingPrice(1000)
+        .category("first")
+        .imagePath("")
+        .build();
+
+        BillItem billItem = new BillItem(item);
+        newBill.addItem(billItem);
+
+        assert(newBill.itemList().contains(billItem));
+
+        FixedBill fixedBill = newCashier.getFixedBill(1);
+        assertEquals(fixedBill.itemList().size(), 1);
+        assert(fixedBill.itemList().contains(billItem));
+    }
 
     @Test
     void inventoryTest(){
@@ -74,6 +90,20 @@ public class HolderTest {
         newInventory.removeItem(item);
         assert(!newInventory.itemList().contains(item));
         assertEquals(newInventory.itemList().size(), 0);
+
+        // add item
+        newInventory.addItem(
+            Item.builder()
+            .itemName("Second Item")
+            .sellingPrice(2000)
+            .category("second")
+            .imagePath("")
+            .build()
+        );
+
+        assertEquals(newInventory.itemList().size(), 1);
+        assertEquals(newInventory.itemList().get(0).itemName(), "Second Item");
+        
     }
 
     @Test
