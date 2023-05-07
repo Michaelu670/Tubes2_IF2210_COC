@@ -3,13 +3,12 @@ package org.app.GUI.Component;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
-import org.app.GUI.MainGUI;
+import org.app.GUI.Component.Features.ReportLabelThreading;
 import org.app.Inventory.Holder.Bill;
 import org.app.Inventory.Holder.FixedBill;
 import org.app.Inventory.Item.BillItem;
 import org.app.Inventory.Item.Item;
 import org.app.Report.AbstractReport;
-import org.app.Report.FixedBillReport;
 import org.app.Report.SalesReport;
 
 import javax.swing.*;
@@ -98,7 +97,7 @@ public class Report extends JPanel {
                 billItem.quantity(100);
                 billItem.notes("test notes");
 
-                Bill bill = new Bill(1);
+                Bill bill = new Bill(1, 0);
                 bill.addItem(billItem);
                 bill.addItem(billItem);
                 bill.addItem(billItem);
@@ -117,7 +116,7 @@ public class Report extends JPanel {
             }
         };
     }
-    protected void toggleButtonEnabled(boolean enable) {
+    public void toggleButtonEnabled(boolean enable) {
         cetakPenjualanButton.setEnabled(enable);
         comboBox1.setEnabled(enable);
         cetakTransaksiButton.setEnabled(enable);

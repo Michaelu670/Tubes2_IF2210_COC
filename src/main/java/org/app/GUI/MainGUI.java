@@ -77,7 +77,8 @@ public class MainGUI extends JFrame{
         newTabAction(new MemberHistorySelect(this)).actionPerformed(null);
         newTabAction(new Report()).actionPerformed(null);
         newTabAction(new InventorySystemMenu(this)).actionPerformed(null);
-        newTabAction(new InventorySystemSell()).actionPerformed(null);
+        newTabAction(new InventorySystemSell(this)).actionPerformed(null);
+        newTabAction(new InventorySystemBuy(this)).actionPerformed(null);
     }
 
     private ActionListener newTabHome(MainGUI mainGUI) {

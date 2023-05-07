@@ -4,13 +4,13 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import org.app.Customer.Customer;
+import org.app.GUI.Component.Features.GUIUtil;
 import org.app.GUI.MainGUI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import java.util.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class MemberRegistration extends JPanel{     
     private DefaultComboBoxModel<Integer> defaultComboBoxModel1;
@@ -67,7 +67,9 @@ public class MemberRegistration extends JPanel{
         for(Customer customer : mainGUI.dataStore.customers().getNotRegisteredCustomers()) {
             defaultComboBoxModel1.addElement(customer.getId());
         }
-        
+
+        textField3.addKeyListener(GUIUtil.numericTextFieldListener());
+
         submitButton.addActionListener(submitAction(
             comboBox1,
             textField2,
