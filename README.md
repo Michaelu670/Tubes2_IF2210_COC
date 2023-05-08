@@ -107,7 +107,11 @@ Fitur-fitur tersebut adalah
 
     Pengguna dapat melihat semua member yang sudah terdaftar pada halaman `List`. Pada halaman ini juga pengguna dapat mengedit nama, nomor telepon, status keaktifan, dan jenis member dari seluruh member yang sudah terdaftar.
 
-    Pengguna dapt melihat sejarah pembeliah dari tiap user pada halaman `History`.
+    ![Halaman List Member](img/listMember.png)
+
+    Pengguna dapt melihat sejarah pembeliah dari tiap user dengan memilih id user yang ingin dilihat pada halaman `History`.
+
+    ![Halaman History Member](img/historyMember.png)
 
 3. Fitur Report
 
