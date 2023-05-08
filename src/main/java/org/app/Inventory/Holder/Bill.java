@@ -92,7 +92,7 @@ public class Bill implements PurchaseDescription, ItemHolder, Serializable {
 
     private boolean checkStock(Inventory stockList){
         for(BillItem item : itemList){
-            List<Item> stockItem = stockList.searchItemName(item.itemName());
+            List<Item> stockItem = stockList.searchItemNameEq(item.itemName());
             if (stockItem.isEmpty()){
                 throw new IndexOutOfBoundsException("Item is not found");
             }
@@ -105,11 +105,14 @@ public class Bill implements PurchaseDescription, ItemHolder, Serializable {
 
     private void reduceStock(Inventory stockList){
         for(BillItem item : itemList){
-            List<Item> stockItem = stockList.searchItemName(item.itemName());
+            List<Item> stockItem = stockList.searchItemNameEq(item.itemName());
+            for (Item stock : stockItem){
+                System.out.println(stock);
+            }
             if (stockItem.isEmpty()){
                 continue;
             }
-            stockItem.get(0).stock(stockList.searchItemName(item.itemName()).get(0).stock() - item.quantity());
+            stockItem.get(0).stock(stockList.searchItemNameEq(item.itemName()).get(0).stock() - item.quantity());
         }
     }
 }

@@ -55,6 +55,16 @@ public class Inventory extends DataHolder implements ItemHolder {
         }
         return items;
     }
+    
+    public List<Item> searchItemNameEq(String name){
+        List<Item> items = new ArrayList<>();
+        for(Item item : itemList){
+            if(item.itemName().equals(name)){
+                items.add(item);
+            }
+        }
+        return items;
+    }
 
     public List<Item> searchItemCategory(String categories){
         List<Item> items = new ArrayList<>();
