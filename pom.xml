@@ -43,7 +43,6 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.app.App</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
