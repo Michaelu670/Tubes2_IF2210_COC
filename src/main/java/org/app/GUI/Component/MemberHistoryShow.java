@@ -5,6 +5,8 @@ import org.app.GUI.MainGUI;
 import org.app.Inventory.Holder.FixedBill;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 import java.util.List;
 
 public class MemberHistoryShow extends JPanel {
@@ -14,11 +16,23 @@ public class MemberHistoryShow extends JPanel {
         this.setName("Member History Show");
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        this.add(new JLabel("History " + id));
+        JLabel historyLabel = new JLabel("History " + id);
+        historyLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        this.add(historyLabel);
+
+        final JScrollPane scrollPane = new JScrollPane();
+        this.add(scrollPane);
+        JPanel billPanel = new JPanel();
+        billPanel.setLayout(new BoxLayout(billPanel, BoxLayout.Y_AXIS));
 
         List<FixedBill> fixedBillList = mainGUI.dataStore.customers().getCustomerFromID(id).getBills();
         for(FixedBill fixedBill : fixedBillList) {
-            this.add(new Bill(fixedBill));
+            JPanel billGUI = new Bill(fixedBill);
+            Border border = BorderFactory.createLineBorder(Color.BLACK, 2);
+            billGUI.setBorder(border);
+            billPanel.add(billGUI);
+            billPanel.add(Box.createVerticalStrut(7));
         }
+        scrollPane.setViewportView(billPanel);
     }
 }

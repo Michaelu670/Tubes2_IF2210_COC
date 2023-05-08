@@ -7,6 +7,7 @@ import org.app.GUI.Component.Features.GUIUtil;
 import org.app.GUI.MainGUI;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.event.*;
 import java.awt.*;
 import java.util.*;

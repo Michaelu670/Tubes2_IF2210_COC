@@ -49,6 +49,7 @@ public class InventorySystemSell extends JPanel {
 
     public void userDefinedConfig() {
         this.setName("Inventory System Sell");
+        listSelectedIndex = -1;
 
         isEditing = false;
         isAdding = false;
@@ -144,6 +145,9 @@ public class InventorySystemSell extends JPanel {
         return new ActionListener() {
             public void actionPerformed(ActionEvent event) {
                 try{
+                    if(inputImagePath == null || inputImagePath.equals("") ){
+                        inputImagePath = "img\\kopi.png";
+                    }
                     if(isAdding) {
                         mainGUI.dataStore.inventory().addItem(
                                 Item.builder()
@@ -183,6 +187,7 @@ public class InventorySystemSell extends JPanel {
                 itemDescriptions[2] = new JTextField(0);
                 itemDescriptions[3] = new JTextField(0);
                 itemDescriptions[4] = new JTextField(0);
+                inputImagePath = "";
             }else {
                 itemDescriptions[0] = new JTextField(((JLabel)itemDescriptions[0]).getText());
                 itemDescriptions[1] = new JTextField(((JLabel)itemDescriptions[1]).getText());
