@@ -56,14 +56,75 @@ Cara kompilasi program
 2. Kompilasi menjadi jar file menggunakan Maven
 
     ```bash
+      cd Tubes2_IF2210_COC
       mvn package
     ```
 
 File jar akan ada berada pada folder target.
 
-Program dapat dijalankan dengan menggunakan command `java -jar` kepada file jar yang sudah dibuat atau yang ada pada folder bin.
+Program dapat dijalankan dengan menggunakan command `java -jar` ditambah dengan nama file jar (dengan dependencies) yang sudah dibuat atau yang ada pada folder bin.
+
+Contoh
+
+```bash
+    java -jar ./target/Tubes2_IF2210_COC-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
 
 ## Pemakaian program
+
+Saat menjalankan program, user akan ditambilkan dengan halaman utama.
+
+![Main Menu](img/mainMenu.png)
+
+Pada halaman ini user dapat memilih fitur yang ingin diakses.
+
+Fitur-fitur tersebut adalah
+
+1. Sistem Usaha Barang
+
+    Terdapat dua menu yaitu `jual barang` dan `beli barang`.
+
+    Pada fitur jual barang, pengguna dapat memasukkan barang yang ingin dijual dengan mengisi semua field yang diperlukan.
+    Menambah barang dengan menekan tombol `Tambah` kemudian dapat mengubah barang atau menghapus barang dengan menekan barang tersebut kemudian menekan tombol `Edit` atau `Delete`.
+
+    ![Menjual barang](img/sellPageInput.png)
+
+    ![Barang jual terdaftar](img/sellPageSuccess.png)
+
+    Setelah barang terdaftar. Pengguna dapat menjual barang tersebut dengan memilih menu beli barang. Pengguna dapat memilih berapa banyak yang ingin dibeli, tipe pembelian, dan catatan jika perlu. Untuk memulai memesan menekan tombol `order` dan jika sudah dibayar tekan tombol `checkout`.
+
+    ![Order barang](img/orderPage.png)
+
+    ![Checkout barang](img/checkoutPage.png)
+
+2. Fitur Membership
+
+    Pada menu member terdapat tiga menu yaitu `Registration`, `List`, dan `History`
+
+    Seseorang yang sudah pernah membeli dapat mendaftar menjadi membership pada halaman `Registration`. Pendaftaran dilakukan dengan memilih ID, memasukkan nama, nomor telepon, dan memilih jenis member.
+
+    ![Halaman registrasi](img/registerPage.png)
+
+    Pengguna dapat melihat semua member yang sudah terdaftar pada halaman `List`. Pada halaman ini juga pengguna dapat mengedit nama, nomor telepon, status keaktifan, dan jenis member dari seluruh member yang sudah terdaftar.
+
+    Pengguna dapt melihat sejarah pembeliah dari tiap user pada halaman `History`.
+
+3. Fitur Report
+
+    Pada menu report pengguna dapat mencetak semua transkasi yang pernah terjadi melalui aplikasi dengan memilih tombol cetak pada bagian `Laporan Penjualan`
+    Atau Pengguna dapat memasukkan id seorang user dan id transaksi-nya yang nanti akan dicetak pada bagian `Laporan Transaksi`
+
+    ![Halaman Report](img/reportPage.png)
+
+4. Fitur Setting
+
+    Pada menu tab ini pengguna dapat memilih data format penyimpanan data dari aplikasi ini serta tempat penyimpanannya.
+
+    ![Halaman Setting](img/settingPage.png)
+
+    Selain itu, tab ini juga menyediakan tempat untuk memasukkan plugin untuk menambah fungsionalitas program seperti plugin yang menampilkan chart dari data aplikasi.
+
+    ![Plugin Chart](img/pluginChart1.png)
 
 ## Project Status
 
