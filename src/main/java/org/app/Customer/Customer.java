@@ -40,4 +40,7 @@ public class Customer implements Serializable {
     public int sizeOfFixedBill() {
         return this.bills.size();
     }
+    public double getFinalPrice(double price) {return price;}
+    public void getPoints(double price) {}
+    public double usePoints(double price) {return price;}
 }

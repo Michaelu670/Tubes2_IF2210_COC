@@ -8,6 +8,7 @@ import com.sun.istack.NotNull;
 import lombok.*;
 import lombok.experimental.Accessors;
 import lombok.experimental.SuperBuilder;
+import org.app.Customer.Customer;
 import org.app.Inventory.Item.BillItem;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;

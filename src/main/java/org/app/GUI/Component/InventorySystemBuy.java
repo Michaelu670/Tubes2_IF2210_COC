@@ -90,8 +90,11 @@ public class InventorySystemBuy extends JPanel {
 
                 currentBill.user(intUserID);
                 currentBill.billId(currentCustomer.sizeOfFixedBill());
-                FixedBill fixedBill = mainGUI.dataStore.cashier().getFixedBill(intUserID, mainGUI.dataStore.inventory());
+                FixedBill fixedBill = mainGUI.dataStore.cashier().getFixedBill(intUserID, mainGUI.dataStore.inventory(), currentCustomer);
                 currentCustomer.addFixedBill(fixedBill);
+
+                if (pakaiPoinCheckBox.isSelected())
+                    fixedBill.totalPrice(currentCustomer.usePoints(fixedBill.totalPrice()));
 
                 mainGUI.closeTab().actionPerformed(null);
             }

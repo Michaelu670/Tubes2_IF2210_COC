@@ -1,5 +1,6 @@
 package org.app.Inventory;
 
+import org.app.Customer.Customer;
 import org.app.Inventory.Holder.*;
 import org.app.Inventory.Item.*;
 import org.junit.jupiter.api.Test;
@@ -78,7 +79,7 @@ public class HolderTest {
 
         assert(newBill.itemList().contains(billItem));
 
-        FixedBill fixedBill = newCashier.getFixedBill(1, newInventory);
+        FixedBill fixedBill = newCashier.getFixedBill(1, newInventory, new Customer());
         assertEquals(fixedBill.itemList().size(), 2);
         assert(fixedBill.itemList().contains(billItem));
         assertEquals(item.stock(), 9);
@@ -92,7 +93,7 @@ public class HolderTest {
         newInventory.removeItem(item);
         assertEquals(newCashier.billList().size(), 1);
         assertEquals(newCashier.billList().get(0).itemList().size(), 2);
-        assertThrows(IndexOutOfBoundsException.class, () -> newCashier.getFixedBill(1, newInventory)); 
+        assertThrows(IndexOutOfBoundsException.class, () -> newCashier.getFixedBill(1, newInventory, new Customer()));
     }
 
     @Test
